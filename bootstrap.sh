@@ -26,7 +26,7 @@ log_error() {
   echo -e "\n${RED}[ERROR] $1${NC}\n"
 }
 
-log "事前準備を開始します"
+log "Bootstrapを開始します"
 
 # Xcode Command Line Tools
 if ! xcode-select -p &> /dev/null; then
@@ -47,6 +47,17 @@ fi
 if ! command -v brew &> /dev/null; then
   log "Homebrewをインストールします"
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+  # Homebrewのパスを通す
+  echo >> $HOME/.zprofile
+  echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> $HOME/.zprofile
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+
+  # brew コマンドが使えるか確認
+  if ! command -v brew &> /dev/null; then
+    log_error "Homebrewのインストールに失敗しました"
+    exit 1
+  fi
 else
   log "Homebrewを最新にアップデートします"
   brew update
@@ -99,4 +110,4 @@ else
   log_skip "chezmoiは既にインストールされています"
 fi
 
-log "セットアップの準備が完了しました 🎉"
+log "Bootstrapが完了しました 🎉"
