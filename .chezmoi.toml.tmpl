@@ -1,0 +1,10 @@
+{{- $name := promptStringOnce . "name" "Your Name" -}}
+{{- $email := promptStringOnce . "email" "Email address" -}}
+
+[data]
+    name = {{ $name | quote }}
+    email = {{ $email | quote }}
+
+[edit]
+    command = "cursor"
+    args = ["--wait"]
