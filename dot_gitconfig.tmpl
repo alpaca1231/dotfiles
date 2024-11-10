@@ -1,0 +1,76 @@
+[user]
+	name = {{ .name }}
+	email = {{ .email }}
+
+# Gitコミットの署名設定
+	signingkey = {{ onepasswordRead "op://ucpfli3yejoywdg4u3y6mscgt4/n47gdbqoyyng4xvyd5cu26xs4e/public key" }}
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
+[commit]
+	gpgsign = true
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[core]
+	editor = nvim
+	excludesfile = {{ .chezmoi.sourceDir }}/.gitignore_global
+[init]
+	defaultBranch = main
+[ghq]
+	root = ~/dev
+[rebase]
+	autostash = true
+[pull]
+	autostash = true
+[alias]
+	ad = add
+	cm = commit
+	cmn = commit --no-verify
+	cmm = commit -m
+	cmmn = commit -m --no-verify
+	ae = commit --allow-empty -m
+	fc = commit --allow-empty -m \"first commit\"
+	ps = push
+	pso = push -u origin
+	psoh = push -u origin HEAD
+	psd = push -d
+	df = diff
+	st = status
+	br = branch
+	bra = branch -a
+	brm = branch -m
+	brd = branch -d
+	brdd = branch -D
+	brc = "!f () { git branch --merged|egrep -v '\\*|develop|main'|xargs git branch -d; };f"
+	co = checkout
+	cob = checkout -b
+	dev = checkout develop
+	main = checkout main
+	sw = switch
+	swc = switch -c
+	lg = log --oneline --graph -10
+	lga = log --oneline --graph
+	fe = fetch --prune
+	pl = pull --prune
+	rb = rebase --keep-empty
+	rbi = rebase -i --keep-empty
+	rbo = rebase --onto
+	rbc = rebase --continue
+	rba = rebase --abort
+	ss = stash save
+	ssu = stash save -u
+	ssl = stash list
+	ssa = stash apply
+	ssp = stash pop
+	ssd = stash drop
+	ssc = stash clear
+	mg = merge
+	mgs = merge --squash
+	mgc = merge --continue
+	mga = merge --abort
+	rs = reset HEAD^
