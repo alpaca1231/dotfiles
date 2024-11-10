@@ -85,6 +85,28 @@ fi
 # 1Password SSH エージェントの設定
 export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
 
+# 1Password CLI
+if ! command -v op &> /dev/null; then
+  log "1Password CLIをインストールします"
+  brew install 1password-cli
+else
+  log_skip "1Password CLIは既にインストールされています"
+fi
+
+# 1Password CLIのログイン
+if ! op account list &> /dev/null; then
+  log "1Password CLIにログインしてください"
+  eval $(op signin)
+
+  # ユーザーの確認が必要なため、ログインが完了するまで待機
+  log_warning "ログインが完了するまで待機しています..."
+  until op account list &> /dev/null; do
+    sleep 10
+  done
+
+  log_success "1Password CLIのログインが完了しました"
+fi
+
 # GitHub との接続確認
 if ssh -T git@github.com 2>&1 | grep -q "successfully authenticated"; then
   log_success "GitHub との SSH 接続が成功しました"

@@ -9,6 +9,7 @@ Provisioned by [chezmoi](https://www.chezmoi.io/)
 - Xcode Command Line Tools
 - Homebrew
 - 1Password(App)
+- 1Password-CLI
 - chezmoi
 
 ```bash
