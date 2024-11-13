@@ -5,4 +5,4 @@ if ! command -v cursor &> /dev/null; then
   exit 1
 fi
 
-xargs -n 1 cursor --install-extension < ~/.config/chezmoi/cursor/extensions.txt
+xargs -n 1 cursor --install-extension < ~/.cursor/extensions.txt
