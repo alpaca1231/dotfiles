@@ -1,0 +1,414 @@
+{
+  // Place your snippets for typescriptreact here. Each snippet is defined under a snippet name and has a prefix, body and
+  // description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+  // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the
+  // same ids are connected.
+  // Example:
+  // "Print to console": {
+  // 	"prefix": "log",
+  // 	"body": [
+  // 		"console.log('$1');",
+  // 		"$2"
+  // 	],
+  // 	"description": "Log output to console"
+  // }
+  "Print to console": {
+    "prefix": "cl",
+    "body": ["console.log($1);", "$2"],
+    "description": "Log output to console"
+  },
+  "className": {
+    "prefix": "cn",
+    "body": ["className='$1'"],
+    "description": "className"
+  },
+  "onClick": {
+    "prefix": "oc",
+    "body": ["onClick={() => $1()}"],
+    "description": "ocClick"
+  },
+  "onChange": {
+    "prefix": "och",
+    "body": ["onChange={(e) => $1(e.target.value)}"],
+    "description": "onChange"
+  },
+
+  "React components": {
+    "prefix": "rc",
+    "body": [
+      "import { FC } from 'react';",
+      "",
+      "type ${TM_FILENAME_BASE/^(\\w)(.*)/${1:/capitalize}${2}/}Props = {",
+      "  $1",
+      "};",
+      "",
+      "export const ${TM_FILENAME_BASE/^(\\w)(.*)/${1:/capitalize}${2}/}: FC<${TM_FILENAME_BASE/^(\\w)(.*)/${1:/capitalize}${2}/}Props> = () => {",
+      "  return (",
+      "    <>",
+      "      $2",
+      "    </>",
+      "  );",
+      "};",
+      ""
+    ]
+  },
+  "React default export": {
+    "prefix": "rcd",
+    "body": [
+      "import { FC } from 'react';",
+      "",
+      "type ${TM_FILENAME_BASE/^(\\w)(.*)/${1:/capitalize}${2}/}Props = {",
+      "  $1",
+      "};",
+      "",
+      "const ${TM_FILENAME_BASE/^(\\w)(.*)/${1:/capitalize}${2}/}: FC<${TM_FILENAME_BASE/^(\\w)(.*)/${1:/capitalize}${2}/}Props> = () => {",
+      "  return (",
+      "    <>",
+      "      $2",
+      "    </>",
+      "  );",
+      "};",
+      "",
+      "export default ${TM_FILENAME_BASE/^(\\w)(.*)/${1:/capitalize}${2}/}"
+    ]
+  },
+  "Next pages components": {
+    "prefix": "npc",
+    "body": [
+      "import { NextPage } from 'next';",
+      "",
+      "type ${TM_FILENAME_BASE/^(\\w)(.*)/${1:/capitalize}${2}/}Props = {",
+      "  $1",
+      "};",
+      "",
+      "const ${TM_FILENAME_BASE/^(\\w)(.*)/${1:/capitalize}${2}/}: NextPage<${TM_FILENAME_BASE/^(\\w)(.*)/${1:/capitalize}${2}/}Props> = () => {",
+      "  return (",
+      "    <>",
+      "      $2",
+      "    </>",
+      "  );",
+      "};",
+      "",
+      "export default ${TM_FILENAME_BASE/^(\\w)(.*)/${1:/capitalize}${2}/}"
+    ]
+  },
+  "React css module": {
+    "prefix": "rcm",
+    "body": [
+      "import { FC } from 'react';",
+      "import styles from './${TM_FILENAME_BASE/^(\\w)(.*)/${1:/capitalize}${2}/}.module.scss';",
+      "",
+      "type ${TM_FILENAME_BASE/^(\\w)(.*)/${1:/capitalize}${2}/}Props = {",
+      "  $1",
+      "};",
+      "",
+      "export const ${TM_FILENAME_BASE/^(\\w)(.*)/${1:/capitalize}${2}/}: FC<${TM_FILENAME_BASE/^(\\w)(.*)/${1:/capitalize}${2}/}Props> = () => {",
+      "  return (",
+      "    <div className={styles.${TM_FILENAME_BASE/^(\\w)(.*)/${1:/capitalize}${2}/}}>",
+      "      $2",
+      "    </div>",
+      "  );",
+      "};",
+      ""
+    ]
+  },
+  "React css module default export": {
+    "prefix": "rcmd",
+    "body": [
+      "import { FC } from 'react';",
+      "import styles from './${TM_FILENAME_BASE/^(\\w)(.*)/${1:/capitalize}${2}/}.module.css';",
+      "",
+      "type ${TM_FILENAME_BASE/^(\\w)(.*)/${1:/capitalize}${2}/}Props = {",
+      "  $1",
+      "};",
+      "",
+      "const ${TM_FILENAME_BASE/^(\\w)(.*)/${1:/capitalize}${2}/}: FC<${TM_FILENAME_BASE/^(\\w)(.*)/${1:/capitalize}${2}/}Props> = () => {",
+      "  return (",
+      "    <div className={styles.${TM_FILENAME_BASE/^(\\w)(.*)/${1:/capitalize}${2}/}}>",
+      "      $2",
+      "    </div>",
+      "  );",
+      "};",
+      "",
+      "export default ${TM_FILENAME_BASE/^(\\w)(.*)/${1:/capitalize}${2}/}"
+    ]
+  },
+  "Next pages css module": {
+    "prefix": "npcm",
+    "body": [
+      "import { NextPage } from 'next';",
+      "import styles from './${TM_FILENAME_BASE/^(\\w)(.*)/${1:/capitalize}${2}/}.module.scss';",
+      "",
+      "type ${TM_FILENAME_BASE/^(\\w)(.*)/${1:/capitalize}${2}/}Props = {",
+      "  $1",
+      "};",
+      "",
+      "const ${TM_FILENAME_BASE/^(\\w)(.*)/${1:/capitalize}${2}/}: NextPage<${TM_FILENAME_BASE/^(\\w)(.*)/${1:/capitalize}${2}/}Props> = () => {",
+      "  return (",
+      "    <div className={styles.${TM_FILENAME_BASE/^(\\w)(.*)/${1:/capitalize}${2}/}}>",
+      "      $2",
+      "    </div>",
+      "  );",
+      "};",
+      "",
+      "export default ${TM_FILENAME_BASE/^(\\w)(.*)/${1:/capitalize}${2}/}"
+    ]
+  },
+
+    "React components tailwindcss shadcn/ui": {
+    "prefix": "rtw",
+    "body": [
+      "import { cn } from '@/lib/utils';",
+      "import { FC } from 'react';",
+      "",
+      "type ${TM_FILENAME_BASE/^(\\w)(.*)/${1:/capitalize}${2}/}Props = {",
+      "  $1",
+      "  className?: string;",
+      "};",
+      "",
+      "export const ${TM_FILENAME_BASE/^(\\w)(.*)/${1:/capitalize}${2}/}: FC<${TM_FILENAME_BASE/^(\\w)(.*)/${1:/capitalize}${2}/}Props> = ({ className }) => {",
+      "  return (",
+      "    <div className={cn('' , className)}>",
+      "      $2",
+      "    </div>",
+      "  );",
+      "};",
+      ""
+    ]
+  },
+
+  "React emotion": {
+    "prefix": "rem",
+    "body": [
+      "import { css } from '@emotion/react';",
+      "",
+      "type ${TM_FILENAME_BASE/^(\\w)(.*)/${1:/capitalize}${2}/}Props = {",
+      "  $1",
+      "};",
+      "",
+      "export const ${TM_FILENAME_BASE/^(\\w)(.*)/${1:/capitalize}${2}/}: React.FC<${TM_FILENAME_BASE/^(\\w)(.*)/${1:/capitalize}${2}/}Props> = () => {",
+      "  return (",
+      "    <div css={container}>",
+      "      $2",
+      "    </div>",
+      "  );",
+      "};",
+      "",
+      "const container = css``;"
+    ]
+  },
+  "React emotion default export": {
+    "prefix": "remd",
+    "body": [
+      "import { css } from '@emotion/react';",
+      "",
+      "type ${TM_FILENAME_BASE/^(\\w)(.*)/${1:/capitalize}${2}/}Props = {",
+      "  $1",
+      "};",
+      "",
+      "const ${TM_FILENAME_BASE/^(\\w)(.*)/${1:/capitalize}${2}/}: React.FC<${${TM_FILENAME_BASE/^(\\w)(.*)/${1:/capitalize}${2}/}}Props> = () => {",
+      "  return (",
+      "    <div css={container}>",
+      "      $2",
+      "    </div>",
+      "  );",
+      "};",
+      "",
+      "export default ${TM_FILENAME_BASE/^(\\w)(.*)/${1:/capitalize}${2}/}",
+      "",
+      "const container = css``;"
+    ]
+  },
+  "Next pages emotion": {
+    "prefix": "npem",
+    "body": [
+      "import { css } from '@emotion/react';",
+      "import { NextPage } from 'next';",
+      "",
+      "type ${TM_FILENAME_BASE/^(\\w)(.*)/${1:/capitalize}${2}/}Props = {",
+      "  $1",
+      "};",
+      "",
+      "const ${TM_FILENAME_BASE/^(\\w)(.*)/${1:/capitalize}${2}/}: NextPage<${TM_FILENAME_BASE/^(\\w)(.*)/${1:/capitalize}${2}/}Props> = () => {",
+      "  return (",
+      "    <div css={container}>",
+      "      $2",
+      "    </div>",
+      "  );",
+      "};",
+      "",
+      "export default ${TM_FILENAME_BASE/^(\\w)(.*)/${1:/capitalize}${2}/}",
+      "",
+      "const container = css``;"
+    ]
+  },
+
+  "const": {
+    "prefix": "c",
+    "body": ["const $1"],
+    "description": "定数"
+  },
+  "let": {
+    "prefix": "l",
+    "body": ["let $1"],
+    "description": "変数"
+  },
+  "var": {
+    "prefix": "v",
+    "body": ["var $1"],
+    "description": "変数"
+  },
+  "for": {
+    "prefix": "fr",
+    "body": ["for (let ${1:i} = 0; ${1:i} < ${2:count}; ++${1:i}) {", "  ${3}", "}"],
+    "description": "for in"
+  },
+  "if": {
+    "prefix": "if",
+    "body": ["if (${1}) {", "  ", "}"],
+    "description": "if"
+  },
+  "try catch": {
+    "prefix": "tr",
+    "body": ["try {", "  ", "} catch (e) {", "  ", "}"],
+    "description": "try catch"
+  },
+  "map": {
+    "prefix": "ma",
+    "body": ["${1:[]}.map((${2:val}) => ${2:val})"],
+    "description": "map"
+  },
+  "find": {
+    "prefix": "fin",
+    "body": ["${1:[]}.find((${2:val}) => ${2:val} === true)"],
+    "description": "find"
+  },
+  "filter": {
+    "prefix": "fil",
+    "body": ["${1:[]}.filter((${2:val}) => ${2:val} === true)"],
+    "description": "filter"
+  },
+  "sort": {
+    "prefix": "so",
+    "body": ["${1:[]}.sort((a, b) => ${2:a > b})"],
+    "description": "sort"
+  },
+  "slice": {
+    "prefix": "sl",
+    "body": ["${1:[]}.slice(${2:0, 5})"],
+    "description": "slice"
+  },
+  "return": {
+    "prefix": "r",
+    "body": ["return $1"],
+    "description": "return"
+  },
+  "async": {
+    "prefix": "as",
+    "body": ["async $1"],
+    "description": "非同期待ち"
+  },
+  "await": {
+    "prefix": "aw",
+    "body": ["await ${1}"],
+    "description": "非同期待ち"
+  },
+  "arrow function": {
+    "prefix": "f",
+    "body": ["($1) => {$2}"],
+    "description": "function"
+  },
+  "import": {
+    "prefix": "im",
+    "body": ["import ${1:val} from '${2:module}'"],
+    "description": "import"
+  },
+  "import useState": {
+    "prefix": "imus",
+    "body": ["import { useState } from 'react'"],
+    "description": "import"
+  },
+  "import useEffect": {
+    "prefix": "imue",
+    "body": ["import { useEffect } from 'react'"],
+    "description": "import"
+  },
+  "export": {
+    "prefix": "ex",
+    "body": ["export $1"],
+    "description": "export"
+  },
+  "Math floor": {
+    "prefix": "mf",
+    "body": ["Math.floor(${1:num})"],
+    "description": "Math floor"
+  },
+  "Math random": {
+    "prefix": "ran",
+    "body": ["Math.random()"],
+    "description": "Math random"
+  },
+  "button": {
+    "prefix": "bu",
+    "body": ["<button onClick={() => ${1}()}>${3:Button}</button>"],
+    "description": "button"
+  },
+  "text": {
+    "prefix": "txt",
+    "body": ["<input type='text' name='${1:txt}' placeholder='${2:入力欄}' ${3:require} />"],
+    "description": "text入力"
+  },
+  "textarea": {
+    "prefix": "txa",
+    "body": ["<textarea name='${1:txta}'></textarea>"],
+    "description": "複数行text入力"
+  },
+  "checkbox": {
+    "prefix": "ch",
+    "body": [
+      "<label for='${1:chk}'><input id='${1:chk}' type='checkbox' name='${1:chk}' value='${2:value}' />${2:value}</label>"
+    ],
+    "description": "checkbox"
+  },
+  "radio": {
+    "prefix": "ra",
+    "body": [
+      "<label for='${1:rad}1' class='radio-inline'><input id='${1:rad}1' type='radio' name='${1:rad}' value='${2:value}1' checked />${2:value}1</label>",
+      "<label for='${1:rad}2' class='radio-inline'><input id='${1:rad}2' type='radio' name='${1:rad}' value='${2:value}2' />${2:value}2</label>",
+      "<label for='${1:rad}3' class='radio-inline'><input id='${1:rad}3' type='radio' name='${1:rad}' value='${2:value}3' />${2:value}3</label>"
+    ],
+    "description": "radio"
+  },
+  "select": {
+    "prefix": "sel",
+    "body": [
+      "<select name='${1:sel}'>",
+      "  <option value='${2:value}1'>${3:項目}1</option>",
+      "  <option value='${2:value}2'>${3:項目}2</option>",
+      "  <option value='${2:value}3'>${3:項目}3</option>",
+      "</select>"
+    ],
+    "description": "select"
+  },
+  "img": {
+    "prefix": "img",
+    "body": ["<img src='${1:https://picsum.photos/300/300/?random}' />"],
+    "description": "img"
+  },
+  "style": {
+    "prefix": "st",
+    "body": ["style={{$1}}"],
+    "description": "style"
+  },
+  "keyframe animation": {
+    "prefix": "ani",
+    "body": [
+      "@keyframes ${1:name} {",
+      "  0% {}",
+      "  100% {}",
+      "}",
+      "animation: ${1:name} ${2:1}s ${3:linear,ease,ease-in,ease-out,ease-in-out,steps(5,start)} ${4:infinite} ${5:alternative};"
+    ],
+    "description": "キーフレームアニメーション"
+  }
+}
