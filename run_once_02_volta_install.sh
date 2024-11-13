@@ -9,14 +9,14 @@ fi
 
 # pnpm
 if ! command -v pnpm &> /dev/null; then
-  npm install -g pnpm
+  volta install pnpm
 else
   echo "pnpm is already installed"
 fi
 
 # yarn
 if ! command -v yarn &> /dev/null; then
-  npm install -g yarn
+  volta install yarn
 else
   echo "yarn is already installed"
 fi
