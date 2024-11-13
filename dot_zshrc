@@ -1,0 +1,4 @@
+# Source all files in ~/.zsh.d
+for file in ~/.zsh.d/*.zsh; do
+  source $file
+done
