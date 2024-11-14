@@ -37,7 +37,7 @@ fi
 
 # ni
 if ! command -v ni &> /dev/null; then
-  volta install ni
+  volta install @antfu/ni
 else
-  echo "ni is already installed"
+  echo "@antfu/ni is already installed"
 fi
