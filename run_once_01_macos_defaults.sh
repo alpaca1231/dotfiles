@@ -78,6 +78,26 @@ defaults write -g InitialKeyRepeat -int 10
 defaults write -g AppleKeyboardUIMode -int 2
 
 
+########## Shortcut ##########
+
+# Spotlight検索を表示をオフ
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 64 "{ enabled = 0; value = { parameters ( 65535, 49, 1048576 ); type = standard; }; };"
+
+# Finderの検索ウインドウを表示をオフ
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 65 "{ enabled = 0; value = { parameters ( 65535, 49, 1048576 ); type = standard; }; };"
+
+# 画面のピクチャをファイルとして保存をオフ
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 28 "{ enabled = 0; value { parameters ( 51, 20, 1441792 ); type = standard; }; };"
+
+# 画面のピクチャをクリップボードにコピーをShift + command + 3に設定
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 29 "{ enabled = 1; value { parameters ( 51, 20, 1179648 ); type = standard; }; };"
+
+# 選択部分のピクチャをファイルとして保存をオフ
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 30 "{ enabled = 0; value { parameters ( 52, 21, 1441792 ); type = standard; }; };"
+
+# 選択部分のピクチャをクリップボードにコピーをShift + command + 4に設定
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 31 "{ enabled = 1; value { parameters ( 52, 21, 1179648 ); type = standard; }; };"
+
 ########## Dock ##########
 
 # すべてのアプリを消す
@@ -87,7 +107,7 @@ defaults write com.apple.dock persistent-apps -array
 defaults write com.apple.dock autohide -bool true
 
 # サイズを変更
-defaults write com.apple.dock tilesize -int 40
+defaults write com.apple.dock tilesize -int 60
 
 # 拡大時のサイズを変更
 defaults write com.apple.dock largesize -int 100
@@ -97,6 +117,18 @@ defaults write com.apple.dock show-recents -bool false
 
 # 最新の使用状況に基づいて操作スペースを自動的に並べ替えるをオフ
 defaults write com.apple.dock mru-spaces -bool false
+
+# ホットコーナー左上をディスプレイをスリープに設定
+defaults write com.apple.dock wvous-tl-corner -int 10
+
+# ホットコーナー右上を通知センターに設定
+defaults write com.apple.dock wvous-tr-corner -int 12
+
+# ホットコーナー左下をオフ
+defaults write com.apple.dock wvous-bl-corner -int 1
+
+# ホットコーナー右下をオフ
+defaults write com.apple.dock wvous-br-corner -int 1
 
 # 再起動
 killall Dock
@@ -118,3 +150,8 @@ defaults write -g NSToolbarTitleViewRolloverDelay -float 0
 
 # 再起動
 killall Finder
+
+
+########## 開発用ディレクトリ作成 ##########
+
+mkdir ~/dev
