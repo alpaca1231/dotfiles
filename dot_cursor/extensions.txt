@@ -1,7 +1,5 @@
-alefragnani.bookmarks
 amodio.restore-editors
 anseki.vscode-color
-astro-build.astro-vscode
 bierner.markdown-mermaid
 bradgashler.htmltagwrap
 bradlc.vscode-tailwindcss
@@ -9,7 +7,6 @@ burkeholland.simple-react-snippets
 chakrounanas.turbo-console-log
 clinyong.vscode-css-modules
 dbaeumer.vscode-eslint
-denoland.vscode-deno
 donjayamanne.githistory
 eamodio.gitlens
 ecmel.vscode-html-css
@@ -40,7 +37,6 @@ oderwat.indent-rainbow
 orta.vscode-jest
 pkief.material-icon-theme
 pnp.polacode
-rangav.vscode-thunder-client
 ritwickdey.liveserver
 ryanluker.vscode-coverage-gutters
 scaffdog.scaffdog-vscode
@@ -50,9 +46,7 @@ sohamkamani.code-eol
 steoates.autoimport
 streetsidesoftware.code-spell-checker
 stringham.copy-with-imports
-styled-components.vscode-styled-components
 stylelint.vscode-stylelint
-svelte.svelte-vscode
 teabyii.ayu
 techer.open-in-browser
 tomsaunders-code.workspace-explorer
@@ -64,7 +58,6 @@ visualstudioexptteam.vscodeintellicode
 vunguyentuan.vscode-css-variables
 wayou.vscode-todo-highlight
 xabikos.javascriptsnippets
-ygkn.storybook-opener
 yoavbls.pretty-ts-errors
 yusukehirao.vscode-markuplint
 zenn.zenn-preview
