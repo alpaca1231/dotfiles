@@ -13,7 +13,7 @@ Provisioned by [chezmoi](https://www.chezmoi.io/)
 - chezmoi
 
 ```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/alpaca1231/dotfiles/mainss/bootstrap.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/alpaca1231/dotfiles/main/bootstrap.sh)"
 ```
 
 ## Installation
