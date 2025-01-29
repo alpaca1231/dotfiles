@@ -43,6 +43,16 @@ else
   log_skip "Xcode Command Line Toolsは既にインストールされています"
 fi
 
+# Rosetta 2
+if [ "$(uname -m)" = "arm64" ]; then
+  if /usr/sbin/sysctl hw.optional.arm64 2>/dev/null | grep -q "hw.optional.arm64: 1"; then
+      log "Rosetta 2をインストールします"
+      softwareupdate --install-rosetta --agree-to-license
+  else
+    log_skip "Rosetta 2は既にインストールされています"
+  fi
+fi
+
 # Homebrew
 if ! command -v brew &> /dev/null; then
   log "Homebrewをインストールします"
