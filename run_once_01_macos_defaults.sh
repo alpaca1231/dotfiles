@@ -69,10 +69,10 @@ defaults write -g com.apple.mouse.scaling -int 3
 ########## Keyboard ##########
 
 # キーリピートを最速
-defaults write -g KeyRepeat -int 1
+defaults write -g KeyRepeat -int 2
 
 # リピート入力認識までの時間を最速
-defaults write -g InitialKeyRepeat -int 10
+defaults write -g InitialKeyRepeat -int 15
 
 # フルキーボードアクセスをオン
 defaults write -g AppleKeyboardUIMode -int 2
@@ -81,22 +81,23 @@ defaults write -g AppleKeyboardUIMode -int 2
 ########## Shortcut ##########
 
 # Spotlight検索を表示をオフ
-defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 64 "{ enabled = 0; value = { parameters ( 65535, 49, 1048576 ); type = standard; }; };"
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 64 "<dict><key>enabled</key><false/><key>value</key><dict><key>parameters</key><array><integer>65535</integer><integer>49</integer><integer>1048576</integer></array><key>type</key><string>standard</string></dict></dict>"
 
 # Finderの検索ウインドウを表示をオフ
-defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 65 "{ enabled = 0; value = { parameters ( 65535, 49, 1048576 ); type = standard; }; };"
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 65 "<dict><key>enabled</key><false/><key>value</key><dict><key>parameters</key><array><integer>65535</integer><integer>49</integer><integer>1048576</integer></array><key>type</key><string>standard</string></dict></dict>"
 
 # 画面のピクチャをファイルとして保存をオフ
-defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 28 "{ enabled = 0; value { parameters ( 51, 20, 1441792 ); type = standard; }; };"
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 28 "<dict><key>enabled</key><false/><key>value</key><dict><key>parameters</key><array><integer>51</integer><integer>20</integer><integer>1441792</integer></array><key>type</key><string>standard</string></dict></dict>"
 
 # 画面のピクチャをクリップボードにコピーをShift + command + 3に設定
-defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 29 "{ enabled = 1; value { parameters ( 51, 20, 1179648 ); type = standard; }; };"
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 29 "<dict><key>enabled</key><true/><key>value</key><dict><key>parameters</key><array><integer>51</integer><integer>20</integer><integer>1179648</integer></array><key>type</key><string>standard</string></dict></dict>"
 
 # 選択部分のピクチャをファイルとして保存をオフ
-defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 30 "{ enabled = 0; value { parameters ( 52, 21, 1441792 ); type = standard; }; };"
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 30 "<dict><key>enabled</key><false/><key>value</key><dict><key>parameters</key><array><integer>52</integer><integer>21</integer><integer>1441792</integer></array><key>type</key><string>standard</string></dict></dict>"
 
 # 選択部分のピクチャをクリップボードにコピーをShift + command + 4に設定
-defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 31 "{ enabled = 1; value { parameters ( 52, 21, 1179648 ); type = standard; }; };"
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 31 "<dict><key>enabled</key><true/><key>value</key><dict><key>parameters</key><array><integer>52</integer><integer>21</integer><integer>1179648</integer></array><key>type</key><string>standard</string></dict></dict>"
+
 
 ########## Dock ##########
 
