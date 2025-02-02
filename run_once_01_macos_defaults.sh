@@ -149,6 +149,9 @@ defaults write -g NSTableViewDefaultSizeMode -int 2
 # ツールバーのタイトルのロールオーバー遅延をオフ
 defaults write -g NSToolbarTitleViewRolloverDelay -float 0
 
+# .DS_Storeファイルを作成しない
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+
 # 再起動
 killall Finder
 
