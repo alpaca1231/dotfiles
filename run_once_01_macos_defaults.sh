@@ -32,6 +32,11 @@ defaults write -g NSAutomaticCapitalizationEnabled -bool false
 # ウィンドウのリサイズと移動を高速化
 defaults write -g NSWindowResizeTime -float 0.001
 
+# menu barの間隔を10に指定
+defaults write -g NSStatusItemSpacing -int 10
+
+# menu barの内余白を6に指定
+defaults write -g NSStatusItemSelectionPadding -int 6
 
 ########## TrackPad ##########
 
