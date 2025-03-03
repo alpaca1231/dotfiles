@@ -25,3 +25,12 @@ chezmoi init --apply alpaca1231
 ```bash
 chezmoi update
 ```
+
+---
+
+## dotfilesで管理されていないツール
+
+- [kensingtonWorks](https://www.kensington.com/ja-jp/software/kensingtonworks/)
+  - 設定ファイルはGoogleDrive経由で取得
+- [HHKB キーマップ変更ツール](https://happyhackingkb.com/jp/download/)
+  - 設定は本体に記録されている
