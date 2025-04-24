@@ -1,29 +1,30 @@
 {
-  /* cursor */
+  /* general */
   "update.showReleaseNotes": false, // リリースノートを表示しない
   "workbench.editor.enablePreview": false, // エディターを開いたときにプレビューを表示しない
   "window.title": "${activeRepositoryName} ${separator} ${activeEditorMedium} ${dirty}", // ウインドウ上部に表示する文字列の設定
   "window.openFoldersInNewWindow": "on", // 新規ワークスペースを別ウインドウで開く
-  "security.workspace.trust.untrustedFiles": "open", // カラーテーマを変更
+  "security.workspace.trust.untrustedFiles": "open", // 信頼されていないファイルを開く設定
+  "window.zoomLevel": 3, // ズーム
+  "files.hotExit": "onExitAndWindowClose", // ウインドウを閉じたときに保存する
+  "files.autoSave": "onFocusChange", // ウインドウが切り替わったときに自動保存
+  "security.promptForLocalFileProtocolHandling": false, // ローカルファイルのプロトコルハンドリングを許可する
+
+  /* explorer */
+  "workspaceExplorer.workspaceStorageDirectory": "~/dev/workspace", // ワークスペースの設定ファイルの保存先
+  "explorer.confirmDelete": false, // ファイル削除時の確認を表示しない
+  "explorer.confirmDragAndDrop": false, // ファイルのドラッグ＆ドロップ時の確認を表示しない
+  "explorer.compactFolders": false, // フォルダーを圧縮しない
+
+  /* editor */
   "workbench.editor.pinnedTabsOnSeparateRow": true, // タブを別行に固定する
   "workbench.editor.labelFormat": "short", // タブに表示する文字列の設定
   "workbench.editor.tabSizing": "fixed", // タブの表示設定
-  "explorer.confirmDelete": false, // ファイル削除時の確認を表示しない
-  "explorer.confirmDragAndDrop": false, // ファイルのドラッグ＆ドロップ時の確認を表示しない
-  "files.hotExit": "onExitAndWindowClose", // ウインドウを閉じたときに保存する
-  "workspaceExplorer.workspaceStorageDirectory": "/Users/kazuki/dev/workspace", // ワークスペースの設定ファイルの保存先
-  "git.confirmSync": false, // Git の同期時の確認を表示しない
-  "explorer.compactFolders": false, // フォルダーを圧縮しない
-  "security.promptForLocalFileProtocolHandling": false, // ローカルファイルのプロトコルハンドリングを許可する
-  "github.copilot.editor.enableAutoCompletions": true, // GitHub Copilotの自動補完を有効にする
-  "workbench.activityBar.orientation": "vertical", // アクティビティバーを垂直に表示
-  "window.zoomLevel": 1, // ズームレベル
 
-  /* theme */
+  /* theme / color */
+  "workbench.activityBar.orientation": "vertical", // アクティビティバーを垂直に表示
+  "workbench.iconTheme": "vscode-icons", // アイコンテーマを変更
   "workbench.colorTheme": "Ayu Dark Bordered", // カラーテーマを変更
-  "workbench.iconTheme": "material-icon-theme", // アイコンテーマを変更
-  "material-icon-theme.folders.theme": "specific",
-  "material-icon-theme.activeIconPack": "react",
   "workbench.colorCustomizations": {
     "editor.lineHighlightBackground": "#1073cf2d",
     "editor.lineHighlightBorder": "#9fced11f"
@@ -40,6 +41,14 @@
       ]
     }
   },
+  "indentRainbow.colors": [
+    "rgba(128, 64, 64, 0.5)",
+    "rgba(128, 96, 32, 0.5)",
+    "rgba(128, 128, 32, 0.5)",
+    "rgba(32, 128, 32, 0.5)",
+    "rgba(32, 64, 128, 0.5)",
+    "rgba(128, 64, 128, 0.5)"
+  ],
 
   /* editor */
   "editor.fontSize": 14, // フォントサイズを変更
@@ -49,21 +58,33 @@
   "editor.tabSize": 2, // タブのサイズ変更
   "editor.renderControlCharacters": true, // 制御文字を表示
   "editor.renderWhitespace": "all", // 半角スペースを常に表示
+  "editor.renderLineHighlight": "all", // 選択行を行番号含めすべてハイライト
+  "editor.bracketPairColorization.enabled": true, // 括弧に色をつける
+  "editor.guides.indentation": false, // インデントガイドを表示しない
+  "editor.guides.bracketPairs": "active", // 括弧の対応を表示
+  "editor.foldingImportsByDefault": true, // ファイルのインポートを折りたたむ
+  "editor.unicodeHighlight.nonBasicASCII": false, // 非ASCII文字をハイライトしない
   "editor.suggestSelection": "first", // 入力候補の1番目を最初に選択しておく
   "editor.inlineSuggest.enabled": true, // インライン候補を有効にする
+  "editor.snippetSuggestions": "top", // スニペットの候補を上部に表示する
+  "editor.inlayHints.enabled": "onUnlessPressed", // インラインヒントを表示
+  "editor.codeLens": true, // コードレンズを表示
+  "editor.formatOnSave": true, // 保存時にフォーマット
+  "editor.formatOnPaste": false, // ペースト時にフォーマットしない
+  "editor.defaultFormatter": "esbenp.prettier-vscode", // デフォルトのフォーマッターをPrettierに設定
+  "editor.codeActionsOnSave": {
+    "source.addMissingImports": "always", // 保存時に自動でインポートを追加
+    "source.fixAll.eslint": "always", // 保存時に自動でESLintを実行
+    "source.fixAll.stylelint": "always" // 保存時に自動でStylelintを実行
+  },
+
+  /* minimap */
   "editor.minimap.renderCharacters": false, // ミニマップの表示文字をブロックに変更
   "editor.minimap.size": "fit", // ミニマップのサイズ
   "editor.minimap.maxColumn": 50, // ミニマップの最大幅
   "editor.minimap.showSlider": "always", // ミニマップでスライダーを常に表示
-  "editor.renderLineHighlight": "all", // 選択行を行番号含めすべてハイライト
-  "editor.bracketPairColorization.enabled": true, // 括弧に色をつける
-  "editor.snippetSuggestions": "top", // 差分エディタで空白を無視しない
-  "editor.unicodeHighlight.nonBasicASCII": false, // 非ASCII文字をハイライトしない
-  "editor.foldingImportsByDefault": true, // ファイルのインポートを折りたたむ
-  "editor.guides.indentation": false, // インデントガイドを表示しない
-  "editor.guides.bracketPairs": "active", // 括弧の対応を表示
-  "editor.inlayHints.enabled": "onUnlessPressed", // インラインヒントを表示
-  "editor.codeLens": true, // コードレンズを表示
+
+  /* Emmet */
   "emmet.showSuggestionsAsSnippets": true, // Emmet の候補を表示
   "emmet.triggerExpansionOnTab": true, // TAB キーで Emmet を展開できるようにする
   "emmet.variables": {
@@ -75,53 +96,33 @@
   "terminal.external.osxExec": "Warp.app", // ターミナルを Warp に変更
   "terminal.integrated.defaultProfile.osx": "zsh", // ターミナルを zsh に変更
 
-  /* formatter */
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.formatOnSave": true, // 保存時にフォーマット
-  "editor.formatOnPaste": false, // ペースト時にフォーマットしない
-  "files.autoSave": "onFocusChange", // ウインドウが切り替わったときに自動保存
-  "editor.codeActionsOnSave": {
-    "source.addMissingImports": "always", // 保存時に自動でインポートを追加
-    "source.fixAll.eslint": "always", // 保存時に自動でESLintを実行
-    "source.fixAll.stylelint": "always" // 保存時に自動でStylelintを実行
-  },
+  /* files */
   "files.defaultLanguage": "markdown", // ファイルのデフォルト言語を変更
   "files.insertFinalNewline": true, // ファイルの保存時に末尾を改行
   "files.trimFinalNewlines": true, // ファイルの保存時に最終行以降をトリミング
-  "html.format.contentUnformatted": "pre, code, textarea, title, h1, h2, h3, h4, h5, h6, p", // タグ内の記述はフォーマットしない
-  "html.format.extraLiners": "", // head, body, html タグの前に改行を入れない
-  "html.format.unformatted": null, // フレージング・コンテンツ（旧インライン要素のようなタグ）はフォーマットしない
-  "diffEditor.ignoreTrimWhitespace": true, // 差分エディタで空白を無視しない
-
-  "[markdown]": {
-    "files.trimTrailingWhitespace": false, // 行末の空白をトリミングしない
-    "editor.formatOnSave": false // 保存時にフォーマットしない
-  },
-
-  /* prettier */
-  "prettier.trailingComma": "es5", // ES5 で有効な末尾のcomma(オブジェクト、配列など)、TypeScriptおよびFlowの型パラメーターの末尾のcomma
-  // "prettier.semi": false, // 行末のセミコロンを削除
-  "prettier.singleQuote": true, // シングルクォーテーションを使用する
-
-  /* インデントカラー */
-  "indentRainbow.colors": [
-    "rgba(128, 64, 64, 0.5)",
-    "rgba(128, 96, 32, 0.5)",
-    "rgba(128, 128, 32, 0.5)",
-    "rgba(32, 128, 32, 0.5)",
-    "rgba(32, 64, 128, 0.5)",
-    "rgba(128, 64, 128, 0.5)"
-  ],
-
-  /* ファイルと言語の関連付け */
+  "diffEditor.ignoreTrimWhitespace": true, // 差分エディタで空白を無視する
   "files.associations": {
     "*.js": "javascript",
     "*.jsx": "javascriptreact",
     "*.ts": "typescript",
     "*.tsx": "typescriptreact"
   },
+  "files.watcherExclude": {
+    "**/node_modules/**": false
+  },
 
-  /* JavaScript | TypeScript */
+  /* HTML */
+  "html.format.contentUnformatted": "pre, code, textarea, title, h1, h2, h3, h4, h5, h6, p", // タグ内の記述はフォーマットしない
+  "html.format.extraLiners": "", // head, body, html タグの前に改行を入れない
+  "html.format.unformatted": null, // フレージング・コンテンツ（旧インライン要素のようなタグ）はフォーマットしない
+
+  /* markdown */
+  "[markdown]": {
+    "files.trimTrailingWhitespace": false, // 行末の空白をトリミングしない
+    "editor.formatOnSave": false // 保存時にフォーマットしない
+  },
+
+  /* JavaScript/TypeScript設定 */
   "javascript.updateImportsOnFileMove.enabled": "always", // ファイル移動時にインポートを更新する
   "javascript.suggest.completeFunctionCalls": true, // 関数呼び出しの引数を補完する
   "javascript.suggest.completeJSDocs": true, // JSDocコメントを補完する
@@ -131,7 +132,7 @@
   "typescript.suggest.completeJSDocs": true, // JSDocコメントを補完する
   "typescript.referencesCodeLens.enabled": true, // 参照数を表示する
 
-  /* 検索対象外 */
+  /* 検索設定 */
   "search.exclude": {
     "*.lock": true,
     "**/node_modules": true,
@@ -139,56 +140,52 @@
     "*lock.json": true
   },
 
-  /* ファイルの監視から除外 */
-  "files.watcherExclude": {
-    "**/node_modules/**": false
-  },
-
-  /* Github Copilot */
-  "github.copilot.enable": {
-    "*": true
-  },
-
-  /* GitHub PullRequests */
+  /* Git / GitHub / copilot */
+  "git.confirmSync": false, // Git の同期時の確認を表示しない
+  "git.ignoreMissingGitWarning": true, // Gitがない場合の警告を無視する
   "githubPullRequests.pullBranch": "never", // プルリクエストを開いたときにブランチをチェックアウトしない
+  "github.copilot.editor.enableAutoCompletions": false, // GitHub Copilotの自動補完を無効にする
+  "github.copilot.enable": {
+    "*": false
+  },
+
+  /* Prettier */
+  "prettier.trailingComma": "es5", // ES5 で有効な末尾のcomma(オブジェクト、配列など)、TypeScriptおよびFlowの型パラメーターの末尾のcomma
+  // "prettier.semi": false, // 行末のセミコロンを削除
+  "prettier.singleQuote": true, // シングルクォーテーションを使用する
 
   /* GitLens */
-  "gitlens.codeLens.enabled": false, // ファイルやそこに含まれるコードに手を入れた人をファイル先頭やコードブロック先頭に表示するかどうか
+  "gitlens.codeLens.enabled": false, // GitLensのコードレンズ機能を無効にする
   "gitlens.statusBar.enabled": false, // 	カーソル行のコードを誰が書いたかをステータスバーに表示するかどうか
 
-  /* template string converter */
+  /* 拡張機能 */
   "template-string-converter.addBracketsToProps": true, // JSXのテンプレート文字列に{}を追加する
   "template-string-converter.convertOutermostQuotes": true, // ネストされた引用符の場合は最も外側のクォーテーションを変換する
   "template-string-converter.autoRemoveTemplateString": true, // ${}を削除したときにテンプレート文字列を自動的に削除する
-
-  /* turbo console log */
   "turboConsoleLog.quote": "'", // シングルクォートで囲む
-  "turboConsoleLog.logMessagePrefix": "", // ログメッセージのプレフィックス
+  "turboConsoleLog.logMessagePrefix": "@@@", // ログメッセージのプレフィックス
   "turboConsoleLog.delimiterInsideMessage": "", // ログメッセージの区切り文字
+  "turboConsoleLog.logMessageSuffix": ":", // ログメッセージのサフィックス
+  "turboConsoleLog.addSemicolonInTheEnd": true, // 行末にセミコロンを追加する
   "turboConsoleLog.insertEnclosingClass": false, // クラス名を挿入する
-  "turboConsoleLog.includeFileNameAndLineNum": false, // ファイル名と行番号を含める
   "turboConsoleLog.insertEnclosingFunction": false, // 関数名を挿入する
-
-  /* Jest */
-  "jest.runMode": "on-demand", // UIからオンデマンドでテストを実行
-
-  /* Live Sass Compiler */
-  "liveSassCompile.settings.formats": [
-    {
-      "format": "expanded",
-      "extensionName": ".css",
-      "savePath": "/css"
-    }
-  ],
-
-  /* Todo+ */
+  // "jest.runMode": "on-demand", // UIからオンデマンドでテストを実行
+  // "liveSassCompile.settings.formats": [
+  //   {
+  //     "format": "expanded",
+  //     "extensionName": ".css",
+  //     "savePath": "/css"
+  //   }
+  // ],
   "todo.embedded.regex": "(?:<!-- *)?(?:#|// @|//|/\\*+|<!--|--|\\* @|\\{!|\\{\\{!--|\\{\\{!) *(TODO|FIXME|MEMO|BUG|UGLY|HACK|NOTE|IDEA|REVIEW|DEBUG|OPTIMIZE)(?:\\s*\\([^)]+\\))?:?(?!\\w)(?: *-->| *\\*/| *!}| *--}}| *}}|(?= *(?:[^:]//|/\\*+|<!--|@|--|\\{!|\\{\\{!--|\\{\\{!))|((?: +[^\\n@]*?)(?= *(?:[^:]//|/\\*+|<!--|@|--(?!>)|\\{!|\\{\\{!--|\\{\\{!))|(?: +[^@\\n]+)?))",
-
-  /* ErrorLens */
   "errorLens.enabledDiagnosticLevels": ["error", "warning"], // エラーと警告のみを表示する
+  "figma.autocompleteBlocks": true, // Figmaのコンポーネントを自動補完する
 
-  /* figma */
-  "figma.autocompleteBlocks": true // Figmaのコンポーネントを自動補完する
+  /* Cursor */
+  "update.releaseTrack": "prerelease", // プレリリース版を使用する
+  "cursor.composer.collapsePaneInputBoxPills": true, // 入力ボックスのピルを折りたたむ
+  "cursor.composer.shouldAllowCustomModes": true, // カスタムモードを許可する
+  "cursor.composer.shouldChimeAfterChatFinishes": true // チャット終了後に通知音を鳴らす
 
   /* EOL */
 }
