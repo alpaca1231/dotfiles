@@ -1,32 +1,47 @@
 [user]
 	name = {{ .name }}
 	email = {{ .email }}
-
 # Gitコミットの署名設定
 	signingkey = {{ onepasswordRead "op://ucpfli3yejoywdg4u3y6mscgt4/n47gdbqoyyng4xvyd5cu26xs4e/public key" }}
 [gpg]
 	format = ssh
 [gpg "ssh"]
 	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
+
+[init]
+	defaultBranch = main
+[core]
+	editor = nvim
 [commit]
 	gpgsign = true
+	verbose = true
+[tag]
+	gpgsign = true
+[pull]
+	ff = only
+	autostash = true
+[rebase]
+	autostash = true
 
+# Github CLIを通じて認証情報を取得する設定
+[credential "https://github.com"]
+	helper =
+	helper = !/opt/homebrew/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper =
+	helper = !/opt/homebrew/bin/gh auth git-credential
+
+# ghqを使ってリポジトリ管理をするdirectoryを指定
+[ghq]
+	root = ~/dev
+
+# Git LFS(Large File Storage)
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
-[core]
-	editor = nvim
-	excludesfile = {{ .chezmoi.sourceDir }}/.gitignore_global
-[init]
-	defaultBranch = main
-[ghq]
-	root = ~/dev
-[rebase]
-	autostash = true
-[pull]
-	autostash = true
+
 [alias]
 	ad = add
 	cm = commit
