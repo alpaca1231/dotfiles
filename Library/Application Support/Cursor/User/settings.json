@@ -5,13 +5,20 @@
   "window.title": "${activeRepositoryName} ${separator} ${activeEditorMedium} ${dirty}", // ウインドウ上部に表示する文字列の設定
   "window.openFoldersInNewWindow": "on", // 新規ワークスペースを別ウインドウで開く
   "security.workspace.trust.untrustedFiles": "open", // 信頼されていないファイルを開く設定
-  "window.zoomLevel": 3, // ズーム
+  "window.zoomLevel": 2, // ズーム
   "files.hotExit": "onExitAndWindowClose", // ウインドウを閉じたときに保存する
   "files.autoSave": "onFocusChange", // ウインドウが切り替わったときに自動保存
   "security.promptForLocalFileProtocolHandling": false, // ローカルファイルのプロトコルハンドリングを許可する
 
+  /* Cursor */
+  "cursor.diffs.useCharacterLevelDiffs": true, // 文字レベルの差分を使用する
+  "cursor.terminal.usePreviewBox": true, // ターミナルでプレビューボックスを使用する
+  "cursor.composer.collapsePaneInputBoxPills": true, // 入力ボックスのピルを折りたたむ
+  "cursor.composer.shouldAllowCustomModes": true, // カスタムモードを許可する
+  "cursor.composer.shouldChimeAfterChatFinishes": true, // チャット終了後に通知音を鳴らす
+
   /* explorer */
-  "workspaceExplorer.workspaceStorageDirectory": "~/dev/workspace", // ワークスペースの設定ファイルの保存先
+  "workspaceExplorer.workspaceStorageDirectory": "/Users/alpaca1231/dev/workspace", // ワークスペースの設定ファイルの保存先
   "explorer.confirmDelete": false, // ファイル削除時の確認を表示しない
   "explorer.confirmDragAndDrop": false, // ファイルのドラッグ＆ドロップ時の確認を表示しない
   "explorer.compactFolders": false, // フォルダーを圧縮しない
@@ -131,6 +138,12 @@
   "typescript.suggest.completeFunctionCalls": true, // 関数呼び出しの引数を補完する
   "typescript.suggest.completeJSDocs": true, // JSDocコメントを補完する
   "typescript.referencesCodeLens.enabled": true, // 参照数を表示する
+  "typescript.inlayHints.enumMemberValues.enabled": true, // enum値をコード内に表示する
+  "typescript.inlayHints.functionLikeReturnTypes.enabled": true, // 関数の戻り値の型をコード内に表示する
+  "typescript.inlayHints.parameterNames.enabled": "all", // パラメータ名をコード内に表示する
+  "typescript.inlayHints.parameterTypes.enabled": true, // パラメータの型をコード内に表示する
+  // "typescript.inlayHints.propertyDeclarationTypes.enabled": true, // プロパティ宣言の型をコード内に表示する
+  // "typescript.inlayHints.variableTypes.enabled": true, // 変数の型をコード内に表示する
 
   /* 検索設定 */
   "search.exclude": {
@@ -179,13 +192,6 @@
   // ],
   "todo.embedded.regex": "(?:<!-- *)?(?:#|// @|//|/\\*+|<!--|--|\\* @|\\{!|\\{\\{!--|\\{\\{!) *(TODO|FIXME|MEMO|BUG|UGLY|HACK|NOTE|IDEA|REVIEW|DEBUG|OPTIMIZE)(?:\\s*\\([^)]+\\))?:?(?!\\w)(?: *-->| *\\*/| *!}| *--}}| *}}|(?= *(?:[^:]//|/\\*+|<!--|@|--|\\{!|\\{\\{!--|\\{\\{!))|((?: +[^\\n@]*?)(?= *(?:[^:]//|/\\*+|<!--|@|--(?!>)|\\{!|\\{\\{!--|\\{\\{!))|(?: +[^@\\n]+)?))",
   "errorLens.enabledDiagnosticLevels": ["error", "warning"], // エラーと警告のみを表示する
-  "figma.autocompleteBlocks": true, // Figmaのコンポーネントを自動補完する
-
-  /* Cursor */
-  "update.releaseTrack": "prerelease", // プレリリース版を使用する
-  "cursor.composer.collapsePaneInputBoxPills": true, // 入力ボックスのピルを折りたたむ
-  "cursor.composer.shouldAllowCustomModes": true, // カスタムモードを許可する
-  "cursor.composer.shouldChimeAfterChatFinishes": true // チャット終了後に通知音を鳴らす
-
+  "figma.autocompleteBlocks": true // プレリリース版を使用する
   /* EOL */
 }
