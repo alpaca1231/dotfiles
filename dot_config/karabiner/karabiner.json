@@ -9,6 +9,7 @@
         "rules": [
           {
             "description": "⌘Qを2連打したときのみアプリが閉じるようにする",
+            "enabled": false,
             "manipulators": [
               {
                 "conditions": [
@@ -75,6 +76,7 @@
           },
           {
             "description": "⌘Wを2連打したときのみタブまたはウィンドウが閉じるようにする",
+            "enabled": false,
             "manipulators": [
               {
                 "conditions": [
@@ -141,6 +143,7 @@
           },
           {
             "description": "［ US ］左右のコマンドキー（⌘）を、単独で押したときは 英数・かな キー として扱う（左⌘は 英数、右⌘は かな）",
+            "enabled": false,
             "manipulators": [
               {
                 "description": " LEFT COMMAND → EISUU ",
@@ -183,16 +186,79 @@
             "vendor_id": 1133
           },
           "ignore": true
-        }
-      ],
-      "fn_function_keys": [
-        {
-          "from": { "key_code": "f4" },
-          "to": [{ "apple_vendor_keyboard_key_code": "launchpad" }]
         },
         {
-          "from": { "key_code": "f5" },
-          "to": [{ "key_code": "f5" }]
+          "identifiers": { "is_keyboard": true },
+          "ignore": true,
+          "manipulate_caps_lock_led": false
+        },
+        {
+          "fn_function_keys": [
+            {
+              "from": { "key_code": "f1" },
+              "to": [{ "consumer_key_code": "display_brightness_decrement" }]
+            },
+            {
+              "from": { "key_code": "f2" },
+              "to": [{ "consumer_key_code": "display_brightness_increment" }]
+            },
+            {
+              "from": { "key_code": "f8" },
+              "to": [{ "consumer_key_code": "rewind" }]
+            },
+            {
+              "from": { "key_code": "f9" },
+              "to": [{ "consumer_key_code": "play_or_pause" }]
+            },
+            {
+              "from": { "key_code": "f10" },
+              "to": [{ "consumer_key_code": "fast_forward" }]
+            }
+          ],
+          "identifiers": {
+            "is_keyboard": true,
+            "product_id": 22,
+            "vendor_id": 1278
+          },
+          "manipulate_caps_lock_led": false
+        },
+        {
+          "fn_function_keys": [
+            {
+              "from": { "key_code": "f1" },
+              "to": [{ "consumer_key_code": "display_brightness_decrement" }]
+            },
+            {
+              "from": { "key_code": "f2" },
+              "to": [{ "consumer_key_code": "display_brightness_increment" }]
+            },
+            {
+              "from": { "key_code": "f8" },
+              "to": [{ "consumer_key_code": "rewind" }]
+            },
+            {
+              "from": { "key_code": "f9" },
+              "to": [{ "consumer_key_code": "play_or_pause" }]
+            },
+            {
+              "from": { "key_code": "f10" },
+              "to": [{ "consumer_key_code": "fast_forward" }]
+            }
+          ],
+          "identifiers": {
+            "is_keyboard": true,
+            "product_id": 33,
+            "vendor_id": 1278
+          },
+          "manipulate_caps_lock_led": false
+        },
+        {
+          "identifiers": {
+            "is_keyboard": true,
+            "product_id": 34304,
+            "vendor_id": 1452
+          },
+          "manipulate_caps_lock_led": false
         }
       ],
       "name": "Default profile",
