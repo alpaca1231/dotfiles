@@ -50,8 +50,18 @@ alias gplm='git pull origin main'
 
 # log
 alias gdf='git diff'
-alias glg='git log --oneline --graph'
-alias lg='git log --oneline --graph -10'
+alias lg='git log --oneline'
+alias lg3='git log --oneline -3'
+alias lg5='git log --oneline -5'
+alias lg10='git log --oneline -10'
+alias lg20='git log --oneline -20'
+alias lgg='git log --oneline --graph'
+alias glg='git log --oneline'
+alias glg3='git log --oneline -3'
+alias glg5='git log --oneline -5'
+alias glg10='git log --oneline -10'
+alias glg20='git log --oneline -20'
+alias glgg='git log --oneline --graph'
 
 # rebase
 alias grb='git rebase --keep-empty'

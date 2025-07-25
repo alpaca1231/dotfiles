@@ -12,6 +12,7 @@
 	defaultBranch = main
 [core]
 	editor = nvim
+	ignorecase = false
 [commit]
 	gpgsign = true
 	verbose = true
@@ -68,8 +69,13 @@
 	main = checkout main
 	sw = switch
 	swc = switch -c
-	lg = log --oneline --graph -10
-	lga = log --oneline --graph
+	lg = log --oneline
+	log = log --oneline
+	lg3 = log --oneline -3
+	lg5 = log --oneline -5
+	lg10 = log --oneline -10
+	lg20 = log --oneline -20
+	lgg = log --oneline --graph
 	fe = fetch --prune
 	pl = pull --prune
 	rb = rebase --keep-empty
