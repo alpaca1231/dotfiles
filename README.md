@@ -34,3 +34,5 @@ chezmoi update
   - 設定ファイルはGoogleDrive経由で取得
 - [HHKB キーマップ変更ツール](https://happyhackingkb.com/jp/download/)
   - 設定は本体に記録されている
+- [HHKB Studio キーマップ変更ツール](https://happyhackingkb.com/jp/download/)
+  - 設定は本体に記録されている
