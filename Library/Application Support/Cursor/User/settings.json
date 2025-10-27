@@ -11,11 +11,13 @@
   "security.promptForLocalFileProtocolHandling": false, // ローカルファイルのプロトコルハンドリングを許可する
 
   /* Cursor */
+  "update.releaseTrack": "prerelease", // プレスリリース版を使用する
   "cursor.diffs.useCharacterLevelDiffs": true, // 文字レベルの差分を使用する
   "cursor.terminal.usePreviewBox": true, // ターミナルでプレビューボックスを使用する
   "cursor.composer.collapsePaneInputBoxPills": true, // 入力ボックスのピルを折りたたむ
   "cursor.composer.shouldAllowCustomModes": true, // カスタムモードを許可する
   "cursor.composer.shouldChimeAfterChatFinishes": true, // チャット終了後に通知音を鳴らす
+  "cursor.windowSwitcher.sidebarHoverCollapsed": true, // サイドバーが折りたたまれた状態でウィンドウスイッチャーのホバー表示を有効にする
 
   /* explorer */
   "workspaceExplorer.workspaceStorageDirectory": "/Users/alpaca1231/dev/workspace", // ワークスペースの設定ファイルの保存先
@@ -191,7 +193,9 @@
   //   }
   // ],
   "todo.embedded.regex": "(?:<!-- *)?(?:#|// @|//|/\\*+|<!--|--|\\* @|\\{!|\\{\\{!--|\\{\\{!) *(TODO|FIXME|MEMO|BUG|UGLY|HACK|NOTE|IDEA|REVIEW|DEBUG|OPTIMIZE)(?:\\s*\\([^)]+\\))?:?(?!\\w)(?: *-->| *\\*/| *!}| *--}}| *}}|(?= *(?:[^:]//|/\\*+|<!--|@|--|\\{!|\\{\\{!--|\\{\\{!))|((?: +[^\\n@]*?)(?= *(?:[^:]//|/\\*+|<!--|@|--(?!>)|\\{!|\\{\\{!--|\\{\\{!))|(?: +[^@\\n]+)?))",
-  "errorLens.enabledDiagnosticLevels": ["error", "warning"], // エラーと警告のみを表示する
-  "figma.autocompleteBlocks": true // プレリリース版を使用する
+  "errorLens.enabledDiagnosticLevels": ["error", "warning"],
+  "vsicons.dontShowNewVersionMessage": true,
+  "window.newWindowProfile": "既定" // エラーと警告のみを表示する
+
   /* EOL */
 }
