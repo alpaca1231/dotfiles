@@ -26,3 +26,9 @@ alias dcu='docker compose up'
 
 # laravel sail
 alias sail='[ -f sail ] && bash sail || bash vendor/bin/sail'
+
+# difit
+alias difit='npx difit'
+alias diff='npx difit .'
+alias df='npx difit .'
+alias dfpr='npx difit --pr'
