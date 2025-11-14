@@ -39,7 +39,7 @@ cask "ddpm"
 cask "ankerwork"
 cask "deepl"
 cask "hiddenbar"
-# cask "monitorcontrol"
+cask "monitorcontrol"
 
 mas "RunCat", id: 1429033973
 mas "Magnet", id: 441258766
