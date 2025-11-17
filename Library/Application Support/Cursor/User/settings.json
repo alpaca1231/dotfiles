@@ -12,7 +12,6 @@
 
   /* Cursor */
   "update.releaseTrack": "prerelease", // プレスリリース版を使用する
-  "cursor.diffs.useCharacterLevelDiffs": true, // 文字レベルの差分を使用する
   "cursor.terminal.usePreviewBox": true, // ターミナルでプレビューボックスを使用する
   "cursor.composer.collapsePaneInputBoxPills": true, // 入力ボックスのピルを折りたたむ
   "cursor.composer.shouldAllowCustomModes": true, // カスタムモードを許可する
@@ -20,7 +19,6 @@
   "cursor.windowSwitcher.sidebarHoverCollapsed": true, // サイドバーが折りたたまれた状態でウィンドウスイッチャーのホバー表示を有効にする
 
   /* explorer */
-  "workspaceExplorer.workspaceStorageDirectory": "/Users/alpaca1231/dev/workspace", // ワークスペースの設定ファイルの保存先
   "explorer.confirmDelete": false, // ファイル削除時の確認を表示しない
   "explorer.confirmDragAndDrop": false, // ファイルのドラッグ＆ドロップ時の確認を表示しない
   "explorer.compactFolders": false, // フォルダーを圧縮しない
@@ -158,20 +156,11 @@
   /* Git / GitHub / copilot */
   "git.confirmSync": false, // Git の同期時の確認を表示しない
   "git.ignoreMissingGitWarning": true, // Gitがない場合の警告を無視する
-  "githubPullRequests.pullBranch": "never", // プルリクエストを開いたときにブランチをチェックアウトしない
-  "github.copilot.editor.enableAutoCompletions": false, // GitHub Copilotの自動補完を無効にする
-  "github.copilot.enable": {
-    "*": false
-  },
 
   /* Prettier */
   "prettier.trailingComma": "es5", // ES5 で有効な末尾のcomma(オブジェクト、配列など)、TypeScriptおよびFlowの型パラメーターの末尾のcomma
   // "prettier.semi": false, // 行末のセミコロンを削除
   "prettier.singleQuote": true, // シングルクォーテーションを使用する
-
-  /* GitLens */
-  "gitlens.codeLens.enabled": false, // GitLensのコードレンズ機能を無効にする
-  "gitlens.statusBar.enabled": false, // 	カーソル行のコードを誰が書いたかをステータスバーに表示するかどうか
 
   /* 拡張機能 */
   "template-string-converter.addBracketsToProps": true, // JSXのテンプレート文字列に{}を追加する
@@ -185,17 +174,9 @@
   "turboConsoleLog.insertEnclosingClass": false, // クラス名を挿入する
   "turboConsoleLog.insertEnclosingFunction": false, // 関数名を挿入する
   // "jest.runMode": "on-demand", // UIからオンデマンドでテストを実行
-  // "liveSassCompile.settings.formats": [
-  //   {
-  //     "format": "expanded",
-  //     "extensionName": ".css",
-  //     "savePath": "/css"
-  //   }
-  // ],
   "todo.embedded.regex": "(?:<!-- *)?(?:#|// @|//|/\\*+|<!--|--|\\* @|\\{!|\\{\\{!--|\\{\\{!) *(TODO|FIXME|MEMO|BUG|UGLY|HACK|NOTE|IDEA|REVIEW|DEBUG|OPTIMIZE)(?:\\s*\\([^)]+\\))?:?(?!\\w)(?: *-->| *\\*/| *!}| *--}}| *}}|(?= *(?:[^:]//|/\\*+|<!--|@|--|\\{!|\\{\\{!--|\\{\\{!))|((?: +[^\\n@]*?)(?= *(?:[^:]//|/\\*+|<!--|@|--(?!>)|\\{!|\\{\\{!--|\\{\\{!))|(?: +[^@\\n]+)?))",
-  "errorLens.enabledDiagnosticLevels": ["error", "warning"],
-  "vsicons.dontShowNewVersionMessage": true,
-  "window.newWindowProfile": "既定" // エラーと警告のみを表示する
+  "vsicons.dontShowNewVersionMessage": true, // 新しいバージョンメッセージを表示しない
+  "errorLens.enabledDiagnosticLevels": ["error", "warning"] // エラーと警告のみを表示する
 
   /* EOL */
 }
