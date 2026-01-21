@@ -1,10 +1,6 @@
 [tools]
-node = "latest"
+node = "lts"
 pnpm = "latest"
 bun = "latest"
 deno = "latest"
-aws = "latest"
 "npm:@antfu/ni" = "latest"
-"npm:@anthropic-ai/claude-code" = "latest"
-"npm:@openai/codex" = "latest"
-"npm:vercel" = "latest"
