@@ -62,7 +62,7 @@
 	brm = branch -m
 	brd = branch -d
 	brdd = branch -D
-	brc = "!f () { git branch --merged|egrep -v '\\*|develop|main'|xargs git branch -d; };f"
+	brc = "!git branch --merged | grep -Ev '\\*|develop|main|master' | xargs git branch -d"
 	co = checkout
 	cob = checkout -b
 	dev = checkout develop
