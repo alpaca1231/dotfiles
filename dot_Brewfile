@@ -9,7 +9,6 @@ brew "starship"
 brew "tree"
 brew "mas"
 brew "awscli"
-brew "vercel-cli"
 
 cask "1password"
 cask "karabiner-elements"
