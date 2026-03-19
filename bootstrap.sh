@@ -1,10 +1,14 @@
 #!/usr/bin/env zsh
 
+set -e
+
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 YELLOW='\033[0;33m'
 CYAN='\033[0;36m'
 NC='\033[0m' # No Color
+
+OP_SSH_SOCK="$HOME/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
 
 log() {
   echo -e "\n${CYAN}[INFO] $1${NC}\n"
@@ -33,7 +37,6 @@ if ! xcode-select -p &> /dev/null; then
   log "Xcode Command Line Toolsをインストールします"
   xcode-select --install
 
-  # ユーザーの確認が必要なため、インストールが完了するまで待機
   log_warning "インストールが完了するまで待機しています..."
   until xcode-select -p &> /dev/null; do
     sleep 10
@@ -45,9 +48,9 @@ fi
 
 # Rosetta 2
 if [ "$(uname -m)" = "arm64" ]; then
-  if /usr/sbin/sysctl hw.optional.arm64 2>/dev/null | grep -q "hw.optional.arm64: 1"; then
-      log "Rosetta 2をインストールします"
-      softwareupdate --install-rosetta --agree-to-license
+  if ! /usr/bin/pgrep -q oahd; then
+    log "Rosetta 2をインストールします"
+    softwareupdate --install-rosetta --agree-to-license
   else
     log_skip "Rosetta 2は既にインストールされています"
   fi
@@ -58,12 +61,8 @@ if ! command -v brew &> /dev/null; then
   log "Homebrewをインストールします"
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-  # Homebrewのパスを通す
-  echo >> $HOME/.zprofile
-  echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> $HOME/.zprofile
   eval "$(/opt/homebrew/bin/brew shellenv)"
 
-  # brew コマンドが使えるか確認
   if ! command -v brew &> /dev/null; then
     log_error "Homebrewのインストールに失敗しました"
     exit 1
@@ -78,13 +77,11 @@ if [ ! -d "/Applications/1Password.app" ]; then
   log "1Passwordをインストールします"
   brew install --cask 1password
 
-  # 1Passwordの設定
   log_warning "1PasswordにログインしてSSHエージェントを有効にしてください"
   open -a "1Password"
 
-  # ユーザーの確認が必要なため、設定が完了するまで待機
   log_warning "設定が完了するまで待機しています..."
-  until [ -S ~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock ]; do
+  until [ -S "$OP_SSH_SOCK" ]; do
     sleep 10
   done
   log_success "1Passwordの設定が完了しました"
@@ -93,7 +90,7 @@ else
 fi
 
 # 1Password SSH エージェントの設定
-export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
+export SSH_AUTH_SOCK="$OP_SSH_SOCK"
 
 # 1Password CLI
 if ! command -v op &> /dev/null; then
@@ -108,7 +105,6 @@ if ! op account list &> /dev/null; then
   log "1Password CLIにログインしてください"
   eval $(op signin)
 
-  # ユーザーの確認が必要なため、ログインが完了するまで待機
   log_warning "ログインが完了するまで待機しています..."
   until op account list &> /dev/null; do
     sleep 10
@@ -121,13 +117,13 @@ fi
 if ssh -T git@github.com 2>&1 | grep -q "successfully authenticated"; then
   log_success "GitHub との SSH 接続が成功しました"
 else
-  log "GitHub との接続に失敗しました"
+  log_error "GitHub との接続に失敗しました"
 
-  if ssh-add -l | grep -q "No such file or dirctory"; then
+  ssh_add_out=$(ssh-add -l 2>&1 || true)
+
+  if echo "$ssh_add_out" | grep -q "No such file or directory"; then
     log_error "1Password の設定から Use the SSH agent を有効にしてください"
-  fi
-
-  if ssh-add -l | grep -q "no identities"; then
+  elif echo "$ssh_add_out" | grep -q "no identities"; then
     log_error "1Password に SSH キーが登録されていません"
   fi
 
@@ -142,4 +138,5 @@ else
   log_skip "chezmoiは既にインストールされています"
 fi
 
-log "Bootstrapが完了しました 🎉"
+log_success "Bootstrapが完了しました 🎉"
+log "次のステップ: chezmoi init --apply alpaca1231"
