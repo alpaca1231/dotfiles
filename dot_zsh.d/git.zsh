@@ -1,38 +1,53 @@
-# ghqを使ってリモートリポジトリをクローンする
+# =============================================================================
+# ghq / peco 連携
+# =============================================================================
 alias clone='ghq get -p'
-
-# branch切り替え
-alias br='git switch $(git branch | peco --prompt "BRANCH>" | head -n 1 | sed -e "s/^\*\s*//g")'
-
-# repository切り替え
+alias br='git switch $(git branch | peco --prompt "BRANCH >" | head -n 1 | sed -e "s/^\*\s*//g")'
 alias repo='cd $(ghq root)/$(ghq list | peco --prompt="REPO >")'
 
-# remote repositoryを作成してghqで取得する
 function ghq-create-remote-repo-clone() {
   local user_name=$(git config --get user.name)
   gh repo create $argv
   ghq get -p git@github.com:$(user_name)/$(argv[1]).git
   cd $(ghq root)/github.com/$(user_name)/$(argv[1])
 }
-alias -g ghcr='ghq-create-remote-repo-clone'
+alias ghcr='ghq-create-remote-repo-clone'
 
+# =============================================================================
+# git（g プレフィックス）
+# =============================================================================
 alias g='git'
 
-alias gst='git status'
-alias gad='git add .'
+# --- add ---
+alias gad='git add'
+alias gada='git add .'
+
+# --- commit ---
 alias gcm='git commit -v'
-alias gcmn='git commit -v --no-verify'
-alias fc='git commit --allow-empty -m "first commit"'
+alias gcmn='git commit -vn'
 alias gcmm='git commit -m'
-alias gcmmn='git commit -m --no-verify'
+alias gcmmn='git commit -nm'
 alias gcma='git commit --amend'
+alias gae='git commit --allow-empty -m'
+alias gfc='git commit --allow-empty -m "first commit"'
+
+# --- diff / status / show ---
+alias gdf='git diff'
+alias gst='git status'
+alias gsh='git show'
+
+# --- restore / reset ---
+alias grst='git restore'
 alias grs='git reset'
 
-# branch
+# --- branch ---
 alias gbr='git branch'
+alias gbra='git branch -a'
 alias gbrd='git branch -d'
 alias gbrdd='git branch -D'
-alias gbrm='git branch --merged | egrep -v "\\*|develop|main" | xargs git branch -d'
+alias gbrc='git branch --merged | egrep -v "\\*|develop|main" | xargs git branch -d'
+
+# --- checkout / switch ---
 alias gco='git checkout'
 alias gcob='git checkout -b'
 alias gsw='git switch'
@@ -40,55 +55,60 @@ alias gswc='git switch -c'
 alias gswm='git switch main'
 alias gswd='git switch develop'
 
-# remote
+# --- remote / push / pull / fetch ---
+alias grmt='git remote -v'
 alias gps='git push'
 alias gpo='git push -u origin HEAD'
-alias gf='git fetch --prune'
-alias gpl='git pull --prune'
+alias gf='git fetch -p'
+alias gpl='git pull -p'
 alias gpld='git pull origin develop'
 alias gplm='git pull origin main'
 
-# log
-alias gdf='git diff'
+# --- log ---
 alias lg='git log --oneline'
 alias lg3='git log --oneline -3'
 alias lg5='git log --oneline -5'
 alias lg10='git log --oneline -10'
 alias lg20='git log --oneline -20'
 alias lgg='git log --oneline --graph'
-alias glg='git log --oneline'
-alias glg3='git log --oneline -3'
-alias glg5='git log --oneline -5'
-alias glg10='git log --oneline -10'
-alias glg20='git log --oneline -20'
-alias glgg='git log --oneline --graph'
 
-# rebase
+# --- rebase ---
 alias grb='git rebase --keep-empty'
 alias grbi='git rebase -i --keep-empty'
+alias grbo='git rebase --onto'
 alias grbc='git rebase --continue'
 alias grba='git rebase --abort'
 
-# stash
-alias gss='git stash save'
-alias gssu='git stash save -u'
+# --- stash ---
+alias gss='git stash push'
+alias gssu='git stash push -u'
 alias gssl='git stash list'
 alias gssa='git stash apply'
 alias gssp='git stash pop'
 alias gssd='git stash drop'
 alias gssc='git stash clear'
 
-# merge
+# --- merge ---
 alias gmg='git merge'
 alias gms='git merge --squash'
 alias gmgc='git merge --continue'
 alias gmga='git merge --abort'
 
+# --- cherry-pick ---
+alias gcp='git cherry-pick'
+alias gcpc='git cherry-pick --continue'
+alias gcpa='git cherry-pick --abort'
+
+# --- revert ---
+alias grv='git revert'
+
+# --- worktree / submodule ---
+alias gwt='git worktree'
+alias gsub='git submodule'
+
+# =============================================================================
 # GitHub CLI
-alias ghb='gh browse'
-alias gho='gh repo view --web'
-alias ghpr='gh pr view --web'
-alias ghprc='gh pr create --web --assignee @me'
-alias ghcp='gh copilot'
-alias ghce='gh copilot explain'
-alias ghcs='gh copilot suggest'
+# =============================================================================
+alias gho='gh browse'
+alias ghpr='gh pr view -w'
+alias ghprc='gh pr create -w -a @me'
