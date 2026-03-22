@@ -1,3 +1,6 @@
+# 8bit 文字（日本語等）をそのまま表示する
+setopt print_eight_bit
+
 # colorsを使用
 autoload -Uz colors && colors
 

@@ -1,11 +1,5 @@
-# 日本語を使用
+# Locale
 export LANG=ja_JP.UTF-8
-setopt print_eight_bit
-
-# PATH
-export PATH="$PATH:/bin"
-export PATH="$PATH:/usr/bin"
-export PATH="$PATH:/usr/local/bin"
 
 # Editor
 export EDITOR='nvim'
@@ -13,8 +7,8 @@ export VISUAL='nvim'
 
 # Homebrew
 if type "/opt/homebrew/bin/brew" > /dev/null 2>&1; then
-  eval $(/opt/homebrew/bin/brew shellenv)
+  eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
-# ssh-agentを1PasswordのSSHエージェントに設定
-export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
+# 1Password SSH Agent
+export SSH_AUTH_SOCK="$HOME/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
