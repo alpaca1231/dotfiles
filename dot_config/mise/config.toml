@@ -3,6 +3,7 @@ node = "lts"
 pnpm = "latest"
 bun = "latest"
 "npm:@antfu/ni" = "latest"
+"npm:difit" = "latest"
 "npm:vercel" = "latest"
 "npm:safe-chain" = "latest"
 

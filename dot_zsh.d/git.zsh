@@ -14,7 +14,7 @@ function ghq-create-remote-repo-clone() {
 alias ghcr='ghq-create-remote-repo-clone'
 
 # =============================================================================
-# git（g プレフィックス）
+# git（g prefix）
 # =============================================================================
 alias g='git'
 
