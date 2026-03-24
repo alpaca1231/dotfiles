@@ -2,36 +2,24 @@
 [
   {
     "key": "shift+cmd+n",
-    "command": "-workbench.action.newWindow"
+    "command": "-workbench.action.newWindow",
   },
   {
     "key": "shift+cmd+c",
     "command": "-workbench.action.terminal.openNativeConsole",
-    "when": "!terminalFocus"
+    "when": "!terminalFocus",
   },
   {
     "key": "shift+cmd+n",
-    "command": "explorer.newFile"
+    "command": "explorer.newFile",
   },
   {
     "key": "shift+alt+cmd+n",
-    "command": "explorer.newFolder"
+    "command": "explorer.newFolder",
   },
   {
-    "key": "alt+cmd+j",
-    "command": "-liveshare.join",
-    "when": "liveshare:state != 'Joined' && liveshare:state != 'Shared'"
+    "key": "alt+cmd+s",
+    "command": "workbench.action.toggleUnifiedSidebarFromKeyboard",
+    "when": "cursor.agentIdeUnification.enabled == true && !isAuxiliaryWindowFocusedContext",
   },
-  {
-    "key": "cmd+i",
-    "command": "composerMode.agent"
-  },
-  {
-    "key": "shift+enter",
-    "command": "workbench.action.terminal.sendSequence",
-    "args": {
-      "text": "\\\r\n"
-    },
-    "when": "terminalFocus"
-  }
 ]

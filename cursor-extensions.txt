@@ -1,0 +1,23 @@
+# Cursor 拡張 ID の一覧（1行1件）
+# 更新例: cursor --list-extensions 2>/dev/null | grep -v '^$' | sort > "$(chezmoi source-path)/cursor-extensions.txt"
+#
+anthropic.claude-code
+bierner.markdown-mermaid
+chakrounanas.turbo-console-log
+dbaeumer.vscode-eslint
+editorconfig.editorconfig
+esbenp.prettier-vscode
+firsttris.vscode-jest-runner
+github.vscode-github-actions
+mhutchie.git-graph
+ms-azuretools.vscode-containers
+ms-azuretools.vscode-docker
+ms-ceintl.vscode-language-pack-ja
+openai.chatgpt
+streetsidesoftware.code-spell-checker
+teabyii.ayu
+usernamehw.errorlens
+vitest.explorer
+vscode-icons-team.vscode-icons
+wayou.vscode-todo-highlight
+yoavbls.pretty-ts-errors
