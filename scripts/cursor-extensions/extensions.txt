@@ -1,6 +1,5 @@
-# Cursor 拡張 ID の一覧（1行1件）
-# 更新例: cursor --list-extensions 2>/dev/null | grep -v '^$' | sort > "$(chezmoi source-path)/cursor-extensions.txt"
-#
+# Cursor 拡張 ID の一覧（1行1件、# 行はコメント）
+# export.sh で自動生成、手動で編集しても OK
 anthropic.claude-code
 bierner.markdown-mermaid
 chakrounanas.turbo-console-log
