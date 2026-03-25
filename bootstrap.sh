@@ -59,7 +59,7 @@ fi
 # Homebrew
 if ! command -v brew &> /dev/null; then
   log "Homebrewをインストールします"
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  /bin/zsh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
   eval "$(/opt/homebrew/bin/brew shellenv)"
 

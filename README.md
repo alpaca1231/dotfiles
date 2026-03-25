@@ -1,8 +1,8 @@
 # dotfiles
+
 新しいMacでの環境構築を自動化するための`dotfiles`
 
 Provisioned by [chezmoi](https://www.chezmoi.io/)
-
 
 ## Bootstrap
 
@@ -12,19 +12,33 @@ Provisioned by [chezmoi](https://www.chezmoi.io/)
 - 1Password-CLI
 - chezmoi
 
-```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/alpaca1231/dotfiles/main/bootstrap.sh)"
+```zsh
+/bin/zsh -c "$(curl -fsSL https://raw.githubusercontent.com/alpaca1231/dotfiles/main/bootstrap.sh)"
 ```
 
 ## Installation
-```bash
+```zsh
 chezmoi init --apply alpaca1231
 ```
 
 ## Update
-```bash
+```zsh
 chezmoi update
 ```
+
+## Cursor 拡張（export / import）
+
+`scripts/cursor-extensions/` で Cursor の拡張機能リストを管理しています。
+
+```zsh
+# エクスポート（現在の拡張一覧を extensions.txt に書き出す）
+zsh "$(chezmoi source-path)/scripts/cursor-extensions/export.sh"
+
+# インポート（extensions.txt の拡張を一括インストール）
+zsh "$(chezmoi source-path)/scripts/cursor-extensions/import.sh"
+```
+
+拡張を追加・削除したあとは `export.sh` を実行してコミットしてください。
 
 ---
 
