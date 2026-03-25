@@ -141,7 +141,6 @@
   "git.confirmSync": false, // Gitの同期時の確認を表示しない
   "git.ignoreMissingGitWarning": true, // Gitがない場合の警告を無視する
   "git.autofetch": true, // リモートの変更を自動的にフェッチする
-  "githubPullRequests.pullBranch": "never", // プルリクエストを開いたときにブランチをチェックアウトしない
 
   /* 拡張機能 - Indent Rainbow */
   "indentRainbow.colors": [
