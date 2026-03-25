@@ -1,2 +1,4 @@
+# リポジトリ専用ファイル（ホームには展開しない）
 README.md
+TASKS.md
 scripts/
