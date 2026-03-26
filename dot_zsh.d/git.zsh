@@ -58,7 +58,7 @@ alias gswd='git switch develop'
 # --- remote / push / pull / fetch ---
 alias grmt='git remote -v'
 alias gps='git push'
-alias gpo='git push -u origin HEAD'
+alias gpsoh='git push -u origin HEAD'
 alias gf='git fetch -p'
 alias gpl='git pull -p'
 alias gpld='git pull origin develop'
