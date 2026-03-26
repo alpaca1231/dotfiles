@@ -48,6 +48,7 @@ chezmoi update
 | `dot_config/` | starship, mise, gh, karabiner, nvim, raycast |
 | `Library/Application Support/Cursor/User/` | Cursor の settings / keybindings / snippets |
 | `scripts/cursor-extensions/` | Cursor 拡張機能の手動エクスポート・インポート（[詳細](scripts/cursor-extensions/README.md)） |
+| `scripts/browser-extensions/` | ブラウザ拡張機能のエクスポート・ストアからの再インストール補助（[詳細](scripts/browser-extensions/README.md)） |
 | `run_once_*.sh` | chezmoi apply 時に一度だけ実行されるスクリプト |
 | `bootstrap.sh` | 初回セットアップ用スクリプト |
 
