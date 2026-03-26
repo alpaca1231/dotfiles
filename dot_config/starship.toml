@@ -10,26 +10,24 @@ $git_branch\
 $git_status\
 $git_state\
 [](fg:color_aqua bg:color_blue)\
-$bun\
-$dart\
-$deno\
-$golang\
-$java\
-$kotlin\
-$lua\
 $nodejs\
-$package\
-$php\
-$python\
-$ruby\
+$bun\
+$deno\
 $rust\
-$scala\
-$swift\
 $zig\
+$golang\
+$python\
+$java\
+$php\
+$ruby\
+$scala\
+$dart\
+$swift\
+$kotlin\
 [](fg:color_blue bg:color_bg3)\
+$docker_context\
 $aws\
 $gcloud\
-$docker_context\
 [](fg:color_bg3 bg:color_bg1)\
 $cmd_duration\
 $time\
@@ -62,28 +60,10 @@ disabled = false
 style = "bg:color_orange fg:color_fg0"
 
 [os.symbols]
+Macos = "󰀵"
 Windows = "󰍲"
 Ubuntu = "󰕈"
-SUSE = ""
-Raspbian = "󰐿"
-Mint = "󰣭"
-Macos = "󰀵"
-Manjaro = ""
 Linux = "󰌽"
-Gentoo = "󰣨"
-Fedora = "󰣛"
-Alpine = ""
-Amazon = ""
-Android = ""
-AOSC = ""
-Arch = "󰣇"
-Artix = "󰣇"
-EndeavourOS = ""
-CentOS = ""
-Debian = "󰣚"
-Redhat = "󱄛"
-RedHatEnterprise = "󱄛"
-Pop = ""
 
 [directory]
 style = "fg:color_fg0 bg:color_yellow"
@@ -124,13 +104,13 @@ staged = "[💫x$count](bg:color_aqua fg:color_fg0)"
 renamed = "🏷 "
 deleted = "🗑 "
 
-[bun]
-symbol = ""
+[nodejs]
+symbol = "󰎙"
 style = "bg:color_blue"
 format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
 
-[dart]
-symbol = ""
+[bun]
+symbol = ""
 style = "bg:color_blue"
 format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
 
@@ -139,38 +119,18 @@ symbol = ""
 style = "bg:color_blue"
 format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
 
+[rust]
+symbol = ""
+style = "bg:color_blue"
+format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
+
+[zig]
+symbol = ""
+style = "bg:color_blue"
+format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
+
 [golang]
 symbol = ""
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
-
-[java]
-symbol = ""
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
-
-[kotlin]
-symbol = ""
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
-
-[lua]
-symbol = ""
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
-
-[nodejs]
-symbol = "󰎙"
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
-
-[package]
-symbol = "󰏗"
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
-
-[php]
-symbol = ""
 style = "bg:color_blue"
 format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
 
@@ -179,13 +139,18 @@ symbol = ""
 style = "bg:color_blue"
 format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
 
-[ruby]
-symbol = ""
+[java]
+symbol = ""
 style = "bg:color_blue"
 format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
 
-[rust]
-symbol = ""
+[php]
+symbol = ""
+style = "bg:color_blue"
+format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
+
+[ruby]
+symbol = ""
 style = "bg:color_blue"
 format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
 
@@ -194,15 +159,25 @@ symbol = ""
 style = "bg:color_blue"
 format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
 
+[dart]
+symbol = ""
+style = "bg:color_blue"
+format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
+
 [swift]
 symbol = ""
 style = "bg:color_blue"
 format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
 
-[zig]
-symbol = ""
+[kotlin]
+symbol = ""
 style = "bg:color_blue"
 format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
+
+[docker_context]
+symbol = ""
+style = "bg:color_bg3"
+format = '[[ $symbol( $context) ](fg:#83a598 bg:color_bg3)]($style)'
 
 [aws]
 symbol = ""
@@ -213,11 +188,6 @@ format = '[[ $symbol( $profile) ](fg:color_fg0 bg:color_bg3)]($style)'
 symbol = ""
 style = "bg:color_bg3"
 format = '[[ $symbol $account( @$domain) ](fg:color_fg0 bg:color_bg3)]($style)'
-
-[docker_context]
-symbol = ""
-style = "bg:color_bg3"
-format = '[[ $symbol( $context) ](fg:#83a598 bg:color_bg3)]($style)'
 
 [time]
 disabled = false
