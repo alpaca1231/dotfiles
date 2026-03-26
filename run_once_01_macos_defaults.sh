@@ -166,4 +166,4 @@ killall Finder
 mkdir -p ~/dev/github.com/alpaca1231
 
 # 開発用ディレクトリ配下にchezmoiリポジトリのシンボリックリンクを作成
-ln -s ~/.local/share/chezmoi ~/dev/github.com/alpaca1231/dotfiles
+ln -sfn ~/.local/share/chezmoi ~/dev/github.com/alpaca1231/dotfiles
