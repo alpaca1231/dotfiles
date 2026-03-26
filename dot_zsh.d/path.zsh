@@ -1,8 +1,14 @@
 # mise
-eval "$(mise activate zsh)"
+if command -v mise &>/dev/null; then
+  eval "$(mise activate zsh)"
+fi
 
-# Github CLI
-eval "$(gh completion -s zsh)"
+# GitHub CLI
+if command -v gh &>/dev/null; then
+  eval "$(gh completion -s zsh)"
+fi
 
 # starship
-eval "$(starship init zsh)"
+if command -v starship &>/dev/null; then
+  eval "$(starship init zsh)"
+fi

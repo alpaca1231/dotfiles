@@ -1,97 +1,74 @@
+# =============================================================================
+# ユーザー・コミット署名（1Password SSH）
+# =============================================================================
 [user]
 	name = {{ .name }}
 	email = {{ .email }}
-# Gitコミットの署名設定
+	# SSH 署名用公開鍵（1Password）
 	signingkey = {{ onepasswordRead "op://ucpfli3yejoywdg4u3y6mscgt4/ibcftwvlo5c55z3zacnob32t2q/public_key" }}
+
 [gpg]
 	format = ssh
+
 [gpg "ssh"]
 	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
 
+# =============================================================================
+# リポジトリ初期化・エディタ
+# =============================================================================
 [init]
 	defaultBranch = main
+
 [core]
 	editor = nvim
 	ignorecase = false
+
+# =============================================================================
+# コミット・タグ（署名）
+# =============================================================================
 [commit]
 	gpgsign = true
 	verbose = true
+
 [tag]
 	gpgsign = true
+
+# =============================================================================
+# fetch / pull / rebase
+# =============================================================================
+[fetch]
+	prune = true
+
 [pull]
 	ff = only
 	autostash = true
+
 [rebase]
 	autostash = true
 
-# Github CLIを通じて認証情報を取得する設定
-[credential "https://github.com"]
-	helper =
-	helper = !/opt/homebrew/bin/gh auth git-credential
-[credential "https://gist.github.com"]
-	helper =
-	helper = !/opt/homebrew/bin/gh auth git-credential
+# =============================================================================
+# マージ・コンフリクト
+# =============================================================================
+[merge]
+	conflictstyle = diff3
 
-# ghqを使ってリポジトリ管理をするdirectoryを指定
+[rerere]
+	enabled = true
+
+# =============================================================================
+# ツール連携
+# =============================================================================
 [ghq]
 	root = ~/dev
 
-# Git LFS(Large File Storage)
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
 
-[alias]
-	ad = add
-	cm = commit
-	cmn = commit --no-verify
-	cmm = commit -m
-	cmmn = commit -m --no-verify
-	ae = commit --allow-empty -m
-	fc = commit --allow-empty -m \"first commit\"
-	ps = push
-	pso = push -u origin
-	psoh = push -u origin HEAD
-	psd = push -d
-	df = diff
-	st = status
-	br = branch
-	bra = branch -a
-	brm = branch -m
-	brd = branch -d
-	brdd = branch -D
-	brc = "!git branch --merged | grep -Ev '\\*|develop|main|master' | xargs git branch -d"
-	co = checkout
-	cob = checkout -b
-	dev = checkout develop
-	main = checkout main
-	sw = switch
-	swc = switch -c
-	lg = log --oneline
-	log = log --oneline
-	lg3 = log --oneline -3
-	lg5 = log --oneline -5
-	lg10 = log --oneline -10
-	lg20 = log --oneline -20
-	lgg = log --oneline --graph
-	fe = fetch --prune
-	pl = pull --prune
-	rb = rebase --keep-empty
-	rbi = rebase -i --keep-empty
-	rbo = rebase --onto
-	rbc = rebase --continue
-	rba = rebase --abort
-	ss = stash save
-	ssu = stash save -u
-	ssl = stash list
-	ssa = stash apply
-	ssp = stash pop
-	ssd = stash drop
-	ssc = stash clear
-	mg = merge
-	mgs = merge --squash
-	mgc = merge --continue
-	mga = merge --abort
-	rs = reset HEAD^
+# =============================================================================
+# URL 書き換え（HTTPS → SSH）
+# =============================================================================
+[url "ssh://git@github.com/"]
+	insteadOf = https://github.com/

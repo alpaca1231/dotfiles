@@ -2,5 +2,10 @@
 node = "lts"
 pnpm = "latest"
 bun = "latest"
-deno = "latest"
 "npm:@antfu/ni" = "latest"
+"npm:difit" = "latest"
+"npm:vercel" = "latest"
+"npm:safe-chain" = "latest"
+
+[settings]
+idiomatic_version_file_enable_tools = ["node"]
