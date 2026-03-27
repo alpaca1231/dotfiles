@@ -1,7 +1,7 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env sh
 
 # neovimがインストールされてない場合はインストール
-if ! command -v nvim &> /dev/null; then
+if ! command -v nvim >/dev/null 2>&1; then
     echo "neovimをインストールします"
     brew install neovim
 fi

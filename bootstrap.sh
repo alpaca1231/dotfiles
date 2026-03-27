@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bash
 
 set -e
 
@@ -59,7 +59,7 @@ fi
 # Homebrew
 if ! command -v brew &> /dev/null; then
   log "Homebrewをインストールします"
-  /bin/zsh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
   eval "$(/opt/homebrew/bin/brew shellenv)"
 
