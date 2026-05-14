@@ -6,10 +6,13 @@ alias br='git switch $(git branch | peco --prompt "BRANCH >" | head -n 1 | sed -
 alias repo='cd $(ghq root)/$(ghq list | peco --prompt="REPO >")'
 
 function ghq-create-remote-repo-clone() {
-  local user_name=$(git config --get user.name)
-  gh repo create $argv
-  ghq get -p git@github.com:$(user_name)/$(argv[1]).git
-  cd $(ghq root)/github.com/$(user_name)/$(argv[1])
+  local repo_name="$1"
+  local user_name
+  user_name=$(gh api user --jq .login)
+
+  gh repo create "$@" || return 1
+  ghq get -p "git@github.com:${user_name}/${repo_name}.git" || return 1
+  cd "$(ghq root)/github.com/${user_name}/${repo_name}" || return 1
 }
 alias ghcr='ghq-create-remote-repo-clone'
 
