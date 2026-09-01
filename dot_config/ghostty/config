@@ -1,0 +1,11 @@
+font-family = "HackGen35 Console"
+theme = "0x96f"
+
+# クイックターミナルの設定
+quick-terminal-position = top
+quick-terminal-screen = main
+quick-terminal-animation-duration = 0.2
+quick-terminal-autohide = true
+
+# グローバルキーバインド
+keybind = global:shift+cmd+space=toggle_quick_terminal
