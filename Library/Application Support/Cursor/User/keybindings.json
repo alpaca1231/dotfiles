@@ -22,4 +22,14 @@
     "command": "workbench.action.toggleUnifiedSidebarFromKeyboard",
     "when": "cursor.agentIdeUnification.enabled == true && !isAuxiliaryWindowFocusedContext",
   },
+  {
+    "key": "ctrl+cmd+space",
+    "command": "composer.toggleVoiceDictation",
+    "when": "!terminalFocus",
+  },
+  {
+    "key": "shift+cmd+space",
+    "command": "-composer.toggleVoiceDictation",
+    "when": "!terminalFocus",
+  },
 ]

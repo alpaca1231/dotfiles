@@ -10,8 +10,8 @@ Provisioned by [chezmoi](https://www.chezmoi.io/)
 
 以下のコマンドで前提ツールをまとめてインストールします。
 
-```zsh
-/bin/zsh -c "$(curl -fsSL https://raw.githubusercontent.com/alpaca1231/dotfiles/main/bootstrap.sh)"
+```sh
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/alpaca1231/dotfiles/main/bootstrap.sh)"
 ```
 
 スクリプトが自動的にインストール・設定するもの:
@@ -24,7 +24,7 @@ Provisioned by [chezmoi](https://www.chezmoi.io/)
 
 ### 2. dotfiles の適用
 
-```zsh
+```sh
 chezmoi init --apply alpaca1231
 ```
 
@@ -32,7 +32,7 @@ chezmoi init --apply alpaca1231
 
 ### 3. 更新
 
-```zsh
+```sh
 chezmoi update
 ```
 

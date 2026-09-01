@@ -42,7 +42,7 @@ cask "deepl"
 cask "hiddenbar"
 cask "monitorcontrol"
 
-mas "RunCat", id: 1429033973
+mas "RunCatNeo", id: 6757801838
 mas "Magnet", id: 441258766
 mas "Paste", id: 967805235
 mas "Klack", id: 6446206067

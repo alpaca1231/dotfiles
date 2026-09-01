@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bash
 
 set -e
 
@@ -59,9 +59,13 @@ fi
 # Homebrew
 if ! command -v brew &> /dev/null; then
   log "Homebrewをインストールします"
-  /bin/zsh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-  eval "$(/opt/homebrew/bin/brew shellenv)"
+  # 再実行時にもbrewが見つかるよう.zprofileに永続化
+  if ! grep -q '/opt/homebrew/bin/brew' "$HOME/.zprofile" 2>/dev/null; then
+    printf '\neval "$(/opt/homebrew/bin/brew shellenv zsh)"\n' >> "$HOME/.zprofile"
+  fi
+  eval "$(/opt/homebrew/bin/brew shellenv bash)"
 
   if ! command -v brew &> /dev/null; then
     log_error "Homebrewのインストールに失敗しました"
@@ -78,6 +82,9 @@ if [ ! -d "/Applications/1Password.app" ]; then
   brew install --cask 1password
 
   log_warning "1PasswordにログインしてSSHエージェントを有効にしてください"
+
+  log "1Passwordを開きます"
+  sleep 3
   open -a "1Password"
 
   log_warning "設定が完了するまで待機しています..."

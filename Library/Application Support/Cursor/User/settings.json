@@ -15,19 +15,17 @@
   "cursor.cpp.disabledLanguages": [], // デフォルトで指定されている markdown 等でもCursor Tabを有効にする
 
   /* ワークベンチ - テーマ・外観 */
-  "workbench.colorTheme": "Ayu Dark Bordered", // カラーテーマにAyu Dark Borderedを使用する
+  "workbench.colorTheme": "0x96f", // カラーテーマに0x96fを使用する
   "workbench.iconTheme": "vscode-icons", // アイコンテーマにvscode-iconsを使用する
   "workbench.activityBar.orientation": "vertical", // アクティビティバーを垂直に表示する
   "workbench.colorCustomizations": {
-    // エディターの色をカスタマイズする
-    "editor.lineHighlightBackground": "#1073cf2d",
-    "editor.lineHighlightBorder": "#9fced11f",
-    "editorIndentGuide.background1": "#FF0000",
-    "editorIndentGuide.background2": "#FFA500",
-    "editorIndentGuide.background3": "#FFFF00",
-    "editorIndentGuide.background4": "#008000",
-    "editorIndentGuide.background5": "#0000FF",
-    "editorIndentGuide.background6": "#800080",
+    // コードのインデントレベルごとに表示される縦線をカスタマイズ
+    "editorIndentGuide.background1": "#ff7272",
+    "editorIndentGuide.background2": "#bcdf59",
+    "editorIndentGuide.background3": "#ffca58",
+    "editorIndentGuide.background4": "#49cae4",
+    "editorIndentGuide.background5": "#a093e2",
+    "editorIndentGuide.background6": "#aee8f4",
   },
 
   /* ワークベンチ - タブ・レイアウト */
@@ -172,5 +170,8 @@
 
   /* 拡張機能 - Error Lens */
   "errorLens.enabledDiagnosticLevels": ["error", "warning"], // エラーと警告のみを表示する
+
+  /* 拡張機能 - Claude Code */
+  "claudeCode.preferredLocation": "panel", // Claude Code をサイドバーではなくパネルで開く
   /* EOL */
 }
