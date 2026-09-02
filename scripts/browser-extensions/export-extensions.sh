@@ -2,7 +2,7 @@
 
 # ブラウザにインストールされている Chrome 拡張の ID をプロファイル別にエクスポートする
 # 使い方: zsh "$(chezmoi source-path)/scripts/browser-extensions/export-extensions.sh" [-b BROWSER] [PROFILE]
-#   -b arc | dia | chrome | edge  エクスポートするブラウザを指定可能
+#   -b chrome | edge  エクスポートするブラウザを指定可能
 #   PROFILE             エクスポートするプロファイルを指定可能
 
 set -euo pipefail
@@ -15,10 +15,8 @@ BROWSER_KEY=""
 # ---------------------------------------------------------------------------
 typeset -A BROWSER_PATHS
 BROWSER_PATHS=(
-  arc     "${HOME}/Library/Application Support/Arc/User Data"
   brave   "${HOME}/Library/Application Support/BraveSoftware/Brave-Browser"
   chrome  "${HOME}/Library/Application Support/Google/Chrome"
-  dia     "${HOME}/Library/Application Support/Dia/User Data"
   edge    "${HOME}/Library/Application Support/Microsoft Edge"
   vivaldi "${HOME}/Library/Application Support/Vivaldi"
 )
@@ -66,7 +64,7 @@ if [[ -z "$BROWSER_KEY" ]]; then
 
   if ! command -v fzf &>/dev/null; then
     echo "fzf が見つかりません。-b でブラウザを指定するか、fzf をインストールしてください。" >&2
-    echo "  例: $0 -b arc" >&2
+    echo "  例: $0 -b chrome" >&2
     echo "  利用可能: ${(j:, :)installed_keys}" >&2
     exit 1
   fi
@@ -91,7 +89,7 @@ BROWSER_DATA="${INSTALLED_BROWSERS[$BROWSER_KEY]}"
 if [[ -n "${1:-}" ]]; then
   PROFILE="$1"
 else
-  # Local State からプロファイル表示名を一括取得（Chrome / Arc 共通）
+  # Local State からプロファイル表示名を一括取得（Chromium 系共通）
   LOCAL_STATE="$BROWSER_DATA/Local State"
   typeset -A local_state_names
   if [[ -f "$LOCAL_STATE" ]]; then

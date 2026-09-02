@@ -2,13 +2,15 @@
 
 ## 方針
 
-[Arc Sync は拡張機能を同期しない](https://resources.arc.net/hc/en-us/articles/20272860828823-Arc-Sync)ため、移行元のブラウザから拡張機能のリストを出力して移行先の Mac で Chrome Web Store のページを開いて拡張を追加することで移行を補助する。
+ブラウザの同期機能に頼らず拡張機能を引き継げるように、移行元のブラウザから拡張機能のリストを出力してリポジトリで管理する。移行先の Mac では Chrome Web Store のページを順に開いて拡張を追加することで移行を補助する。
 
 ## 運用
 
 1. ブラウザで拡張を追加・削除したら、`export-extensions.sh` を実行して拡張リストを更新する
 2. 変更をコミットする
 3. 新しい Mac で `chezmoi update` のあと `open-extensions.sh` を実行し、開いた Chrome Web Store の各ページでブラウザに追加する
+
+拡張リストには ID ごとに拡張名をコメントで併記している。またブラウザ同梱の内部拡張と会社のポリシー配布の拡張はストアページから追加できないため除外している。`export-extensions.sh` はファイルを上書きしてこの 2 つを反映しないので、実行後に手で入れ直す。
 
 ### Export
 
@@ -17,13 +19,13 @@
 zsh "$(chezmoi source-path)/scripts/browser-extensions/export-extensions.sh"
 
 # ブラウザを指定（プロファイルは fzf で選択）
-zsh "$(chezmoi source-path)/scripts/browser-extensions/export-extensions.sh" -b arc
+zsh "$(chezmoi source-path)/scripts/browser-extensions/export-extensions.sh" -b chrome
 
 # ブラウザとプロファイルを両方指定
-zsh "$(chezmoi source-path)/scripts/browser-extensions/export-extensions.sh" -b arc Default
+zsh "$(chezmoi source-path)/scripts/browser-extensions/export-extensions.sh" -b chrome Default
 ```
 
-出力: `extensions-arc-Default.txt`（プロファイル名のスペースはアンダースコアに変換）
+出力: `extensions-chrome-Default.txt`（プロファイル名のスペースはアンダースコアに変換）
 
 ### Open（ストアページをブラウザで開く）
 
@@ -32,10 +34,10 @@ zsh "$(chezmoi source-path)/scripts/browser-extensions/export-extensions.sh" -b 
 zsh "$(chezmoi source-path)/scripts/browser-extensions/open-extensions.sh"
 
 # ファイル名を直接指定
-zsh "$(chezmoi source-path)/scripts/browser-extensions/open-extensions.sh" extensions-arc-Default.txt
+zsh "$(chezmoi source-path)/scripts/browser-extensions/open-extensions.sh" extensions-chrome-Default.txt
 
 # -b でブラウザを指定
-zsh "$(chezmoi source-path)/scripts/browser-extensions/open-extensions.sh" -b arc extensions-arc-Default.txt
+zsh "$(chezmoi source-path)/scripts/browser-extensions/open-extensions.sh" -b chrome extensions-chrome-Default.txt
 ```
 
 ### cocopy の復元

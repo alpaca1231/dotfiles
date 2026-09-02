@@ -1,7 +1,7 @@
 import type { FinickyConfig } from '/Applications/Finicky.app/Contents/Resources/finicky.d.ts';
 
 export default {
-  defaultBrowser: 'Arc',
+  defaultBrowser: 'Google Chrome',
   options: {
     // Hide the Finicky icon for the menu bar
     hideIcon: true,

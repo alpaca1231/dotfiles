@@ -2,7 +2,7 @@
 
 # 拡張 ID リストの各 ID に対応する Chrome Web Store ページをブラウザで開く
 # 使い方: zsh "$(chezmoi source-path)/scripts/browser-extensions/open-extensions.sh" [-b BROWSER] [ファイル名 or プロファイル名]
-#   -b arc | chrome | "アプリ名"  開くブラウザを指定可能
+#   -b chrome | edge | "アプリ名"  開くブラウザを指定可能
 #   ファイル名を省略すると対話式で選択可能
 
 set -euo pipefail
@@ -18,8 +18,6 @@ while [[ "${1:-}" == -* ]]; do
     -b|--browser)
       shift
       case "${1:-}" in
-        arc)     BROWSER="Arc" ;;
-        dia)     BROWSER="Dia" ;;
         chrome)  BROWSER="Google Chrome" ;;
         edge)    BROWSER="Microsoft Edge" ;;
         firefox) BROWSER="Firefox" ;;

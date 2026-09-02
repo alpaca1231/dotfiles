@@ -12,8 +12,8 @@ brew "awscli"
 
 cask "1password"
 cask "karabiner-elements"
-cask "arc"
-cask "thebrowsercompany-dia"
+# cask "arc" # ACNではインストール不可
+# cask "thebrowsercompany-dia" # ACNではインストール不可
 cask "google-chrome"
 # cask "firefox"
 cask "finicky"

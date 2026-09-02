@@ -1,0 +1,14 @@
+# chrome 拡張 ID（プロファイル: Default）
+# open-extensions.sh でストアページを順に開く
+
+aeblfdkhhhdcdjpifhhbdiojplfjncoa  # 1Password
+cgipifjpcbhdppbjjphmgkmmgbeaggpc  # Slack Custom Emoji Manager
+ghbmnnjooekpmoecnnnilnnbdlolhkhi  # Google Docs Offline
+gppongmhjkpfnbhagpmjfkannfbllamg  # Wappalyzer
+ihnfodlbkhgjnbheemjhkjfkfglgbdgc  # cocopy
+kjiieeppkcjgdigogiafneikdhpagpbc  # TDK Meta Checker
+lakeepohjegichaoakaaambeaipdcdmf  # Copy LGTM
+ldmmifpegigmeammaeckplhnjbbpccmm  # Save to Notion
+lglfmldlfmbbehalkgiglehhjblbfcjo  # Developer Edition Dark
+neebplgakaahbhdphmkckjjcegoiijjo  # Keepa
+pahdifkbcgneagemikgmkdfminpghnll  # LGTM
