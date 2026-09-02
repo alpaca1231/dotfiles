@@ -5,11 +5,12 @@
 # システム環境設定を終了
 osascript -e 'tell application "System Preferences" to quit'
 
+########## AccentureのMacではsudoキープアライブが使えないのでコメントアウト ##########
 # 管理者権限を事前に取得
-sudo -v
+# sudo -v
 
 # 実行中は定期的に sudo 認証を延長する
-while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+# while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 
 ########## General ##########
