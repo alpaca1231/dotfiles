@@ -115,6 +115,9 @@ defaults write com.apple.dock autohide -bool true
 # サイズを変更
 defaults write com.apple.dock tilesize -int 60
 
+# 拡大をオン
+defaults write com.apple.dock magnification -bool true
+
 # 拡大時のサイズを変更
 defaults write com.apple.dock largesize -int 100
 
