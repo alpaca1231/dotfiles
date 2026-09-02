@@ -1,12 +1,8 @@
 # edge 拡張 ID（プロファイル: Default）
 # open-extensions.sh でストアページを順に開く
 
-cgjgjfacjflmgphhhepmbhhbgjieaecn
-dhdgffkkebhmkfjojejmpbldmpobfkfo
-dppgmdbiimibapkepcbdbmkaabgiofem
-gppongmhjkpfnbhagpmjfkannfbllamg
-hdkmoadgjoajhfgnjdbagiojmdknphdl
-higleibocjmgcnbikjneplkibiopjnkp
-ihnfodlbkhgjnbheemjhkjfkfglgbdgc
-jmjflgjpcpepeafmmgdpfkogkghcpiha
-kfbdpdaobnofkbopebjglnaadopfikhh
+dhdgffkkebhmkfjojejmpbldmpobfkfo  # Tampermonkey
+dppgmdbiimibapkepcbdbmkaabgiofem  # 1Password
+gppongmhjkpfnbhagpmjfkannfbllamg  # Wappalyzer
+ihnfodlbkhgjnbheemjhkjfkfglgbdgc  # cocopy
+ldmmifpegigmeammaeckplhnjbbpccmm  # Save to Notion
